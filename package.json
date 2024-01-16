@@ -12,9 +12,12 @@
   "devDependencies": {
     "@types/jquery": "^3.5.29",
     "@types/owl.carousel": "^2.3.6",
+    "@vite-pwa/nuxt": "^0.4.0",
     "nuxt": "^3.9.1",
     "vue": "^3.4.10",
     "vue-router": "^4.2.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@nuxt/image": "^1.2.0"
+  }
 }

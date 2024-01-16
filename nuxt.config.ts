@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  modules: ["@vite-pwa/nuxt", "@nuxt/image"],
 
   app: {
     head: {
@@ -99,5 +100,22 @@ export default defineNuxtConfig({
         types: ["jquery", "owl.carousel"],
       },
     },
+  },
+
+  pwa: {
+    manifest: {
+      name: "GroberPlus",
+      short_name: "GroberPlus",
+      description: "GroberPlus",
+      lang: "en",
+      theme_color: "#ffffff",
+      background_color: "#ffffff",
+      display: "standalone",
+      start_url: "/",
+    },
+  },
+
+  image: {
+    dir: "assets/images",
   },
 });
