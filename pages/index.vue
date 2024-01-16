@@ -4,67 +4,15 @@
 // <meta name="description" content="inox is a Agency, Startup and SaaS template by tempload." />
 // <meta name="keywords" content="inox, startup, saas, agency, development, html, template, tempload" />
 // <meta name="author" content="tempload"/>
+
+useSeoMeta({
+  title: "Projects",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+});
 </script>
 
 <template>
-  <!-- ***** Preloader Start ***** -->
-  <div class="preloader-wrapper">
-    <div class="loader"></div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
-              <img src="~/assets/images/logo.svg" alt="GroberPlus" />
-            </a>
-            <!-- ***** Logo End ***** -->
-
-            <!-- ***** Menu Start ***** -->
-            <ul class="nav">
-              <li><a href="index.html#welcome">Home</a></li>
-              <li class="submenu">
-                <a href="javascript:;">Project</a>
-                <ul>
-                  <li><a href="project-grid.html">Project Grid</a></li>
-                  <li><a href="project-list.html">Project List</a></li>
-                  <li><a href="project-single.html">Project Single</a></li>
-                </ul>
-              </li>
-              <li class="submenu">
-                <a href="javascript:;">Pages</a>
-                <ul>
-                  <li><a href="about-me.html">About Me</a></li>
-                  <li><a href="about-us.html">About Us</a></li>
-                  <li><a href="gallery.html">Gallery</a></li>
-                  <li><a href="faq.html">FAQ's</a></li>
-                </ul>
-              </li>
-              <li class="submenu">
-                <a href="javascript:;">Blog</a>
-                <ul>
-                  <li><a href="blog-list.html">Blog List</a></li>
-                  <li><a href="blog-single.html">Blog Single</a></li>
-                </ul>
-              </li>
-              <li><a class="contact-btn" href="contact.html">Contact</a></li>
-            </ul>
-            <a class="menu-trigger">
-              <span>Menu</span>
-            </a>
-            <!-- ***** Menu End ***** -->
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
-
   <!-- ***** Welcome Area Start ***** -->
   <div class="welcome">
     <div class="welcome-content">
@@ -476,99 +424,4 @@
     </div>
   </section>
   <!-- ***** Blog End ***** -->
-
-  <!-- ***** Footer Start ***** -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-md-12 col-sm-12">
-          <img src="~/assets/images/footer-logo.svg" class="logo" alt="" />
-          <div class="text">
-            Morbi convallis bibendum urna ut viverra. Maecenas quis consequat
-            libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies
-            laoreet ullamcorper.
-          </div>
-          <ul class="social">
-            <li>
-              <a href="#"><i class="fa fa-facebook"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-linkedin"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-google-plus"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-github"></i></a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-          <h5>Helpful Links</h5>
-          <ul class="footer-nav">
-            <li>
-              <a href="#"
-                ><i class="fa fa-angle-right"></i><span>About Us</span></a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fa fa-angle-right"></i><span>Features</span></a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fa fa-angle-right"></i><span>FAQ’s</span></a
-              >
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-angle-right"></i><span>Blog</span></a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-6 col-6">
-          <h5>Support</h5>
-          <ul class="footer-nav">
-            <li>
-              <a href="#"
-                ><i class="fa fa-angle-right"></i><span>Privacy Policy</span></a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fa fa-angle-right"></i><span>Terms of Use</span></a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fa fa-angle-right"></i><span>Support Center</span></a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fa fa-angle-right"></i><span>Contact</span></a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-12">
-          <h5>Contact Us</h5>
-          <div class="address">
-            <p>455 West Orchard Street<br />Kings Mountain, NC 28086</p>
-            <p>Phone: (272) 211-7370</p>
-            <p><span>E-Mail: </span><a href="#">support@yourbrand.com</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <p class="copyright">© 2021 inox. All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- ***** Footer End ***** -->
 </template>

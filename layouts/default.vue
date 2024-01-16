@@ -4,5 +4,7 @@ usePageLoadingAnimation();
 </script>
 
 <template>
+  <AppHeader />
   <slot />
+  <AppFooter />
 </template>
