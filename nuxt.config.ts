@@ -66,7 +66,7 @@ export default defineNuxtConfig({
         },
         {
           type: "text/javascript",
-          src: "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js",
+          src: "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js",
         },
         {
           type: "text/javascript",

@@ -1,10 +1,6 @@
 (function ($) {
   "use strict";
 
-  // Window Resize Mobile Menu Fix
-  mobileNav();
-  welcomeFix();
-
   // Scroll animation init
   window.sr = new ScrollReveal();
 
@@ -86,85 +82,5 @@
       preloader: false,
       fixedContentPos: false,
     });
-  }
-
-  // Page loading animation
-  // $(window).on("load", function () {
-  //   if ($(".cover").length) {
-  //     $(".cover").parallax({
-  //       imageSrc: $(".cover").data("image"),
-  //       zIndex: "1",
-  //     });
-  //   }
-
-  //   $(".preloader-wrapper").animate(
-  //     {
-  //       opacity: "0",
-  //     },
-  //     600,
-  //     function () {
-  //       setTimeout(function () {
-  //         // Home Parallax
-  //         if ($(".parallax-image").length) {
-  //           $(".parallax-image").parallax({
-  //             imageSrc: "/images/photos/parallax/parallax-1.jpg",
-  //             zIndex: "1",
-  //           });
-  //         }
-
-  //         // Home Parallax Counterup
-  //         if ($(".parallax-counter").length) {
-  //           $(".parallax-counter").parallax({
-  //             imageSrc: "/images/photos/parallax/parallax-2.jpg",
-  //             zIndex: "1",
-  //           });
-  //         }
-  //         $(".preloader-wrapper").css("visibility", "hidden").fadeOut();
-  //       }, 300);
-  //     }
-  //   );
-  // });
-
-  // Window Resize Mobile Menu Fix
-  $(window).on("resize", function () {
-    mobileNav();
-    welcomeFix();
-  });
-
-  // Window Resize Mobile Menu Fix
-  function mobileNav() {
-    var width = $(window).width();
-    $(".submenu").on("click", function () {
-      if (width < 992) {
-        $(".submenu ul").removeClass("active");
-        $(this).find("ul").toggleClass("active");
-      }
-    });
-  }
-
-  // Welcome area set position
-  function welcomeFix() {
-    if ($(".welcome").length) {
-      var height = $(window).height();
-      var wwidth = $(window).width();
-
-      if (wwidth > 992) {
-        $(".welcome").css("height", height);
-        var sliderPosition = $(".slider-position").offset().left;
-
-        $(".slider-wrapper").css({
-          left: sliderPosition,
-          width: wwidth - sliderPosition,
-          position: "absolute",
-        });
-      } else {
-        $(".welcome").css("height", "auto");
-        $(".slider-wrapper").css({
-          left: "0px",
-          width: "100%",
-          position: "relative",
-        });
-      }
-    }
   }
 })(window.jQuery);

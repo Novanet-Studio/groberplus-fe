@@ -1,8 +1,7 @@
 export default function useOwlCarousel() {
-  onMounted(() => {
-    // Welcome area init
+  function loadCarousel() {
     if ($(".owl-carousel").length) {
-      var welcomeSlider = $(".owl-carousel");
+      const welcomeSlider = $(".owl-carousel");
       welcomeSlider.owlCarousel({
         loop: true,
         // margin: 10,
@@ -46,5 +45,14 @@ export default function useOwlCarousel() {
         welcomeSlider.trigger("next.owl.carousel");
       });
     }
+  }
+
+  onMounted(() => {
+    // Welcome area init
+    setTimeout(() => {
+      loadCarousel();
+    }, 500);
   });
+
+  return loadCarousel;
 }
