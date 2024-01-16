@@ -1138,7 +1138,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/jquery@^3.5.29":
+"@types/jquery@*", "@types/jquery@^3.5.29":
   version "3.5.29"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.29.tgz#3c06a1f519cd5fc3a7a108971436c00685b5dcea"
   integrity sha512-oXQQC9X9MOPRrMhPHHOsXqeQDnWeCDT3PelUIg/Oy8FAbzSZtFHRjc7IpbfFVmpLtJ+UOoywpRsuO5Jxjybyeg==
@@ -1151,6 +1151,13 @@
   integrity sha512-cZShBaVa+UO1LjWWBPmWRR4+/eY/JR/UIEcDlVsw3okjWEu+rB7/mH6X3B/L+qJVHDLjk9QW/y2upp9wp1yDXA==
   dependencies:
     undici-types "~5.26.4"
+
+"@types/owl.carousel@^2.3.6":
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/@types/owl.carousel/-/owl.carousel-2.3.6.tgz#391565bada4bbd3a7ff5c526d725e349c7e0d709"
+  integrity sha512-03y/DrsCgIWknURbjuals2VNZJMyIF5athoOfsm13KpGY7EacoKZ5ENJ0MZtxtnsaol9Tgmk7t6rQ68EOBjaWg==
+  dependencies:
+    "@types/jquery" "*"
 
 "@types/resolve@1.20.2":
   version "1.20.2"

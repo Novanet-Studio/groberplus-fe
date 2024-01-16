@@ -92,4 +92,12 @@ export default defineNuxtConfig({
   },
 
   css: ["./assets/css/style.css"],
+
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        types: ["jquery", "owl.carousel"],
+      },
+    },
+  },
 });
