@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useOwlCarousel();
-// usePageLoadingAnimation();
+const loadingPageAnimation = usePageLoadingAnimation();
 const welcomeFix = useWelcomeFix();
 const mobileNav = useMobileNav();
 
@@ -14,6 +14,7 @@ function handleResize() {
 onMounted(() => {
   showLoader.value = true;
   handleResize();
+  loadingPageAnimation();
 
   setTimeout(() => {
     showLoader.value = false;

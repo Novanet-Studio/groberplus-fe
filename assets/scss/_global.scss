@@ -34,7 +34,7 @@ body {
 .left-heading {
 
 	.section-title {
-		@include font($normal, 28px);
+		@include font($bold, 28px);
 		color: $headingDark;
 		letter-spacing: 1.75px;
 		line-height: 42px;

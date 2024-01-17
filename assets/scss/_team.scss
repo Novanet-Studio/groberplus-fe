@@ -11,11 +11,13 @@ our team
 
 	.img {
 		position: relative;
-		z-index: 2;
+		z-index: 1;
 		margin-top: 14px;
 		float: left;
 		box-shadow: 0 2px 48px 0 rgba(0,0,0,0.13);
 		@include transition(.3s);
+		width: 291px;
+		height: 232px;
 	}
 
 	.content {
@@ -23,11 +25,11 @@ our team
 		z-index: 1;
 		background: #fff;
 		box-shadow: 0 2px 48px 0 rgba(0,0,0,0.13);
-		right: 15px;
-		top: 0px;
+		right: -100px;
+		top: 14%;
 		width: 80%;
 		height: 183px;
-		padding-left: 120px;
+		padding-left: 50px;
 		display: flex;
 		align-items: center;
 		overflow: hidden;
@@ -47,12 +49,12 @@ our team
 				@include transition(.3s);
 			}
 
-			.user-name {
+			.title {
 				display: block;
 				width: 100%;
 				@include font($normal, 16px);
 				letter-spacing: 0.69px;
-				color: $headingDark;
+				color: $primaryColor;
 				margin-bottom: 5px;
 				margin-top: 3px;
 			}

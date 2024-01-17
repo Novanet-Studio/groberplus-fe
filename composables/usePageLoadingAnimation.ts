@@ -1,3 +1,6 @@
+import parallaxImage1 from "~/assets/images/photos/parallax/img.jpg";
+import parallaxImage2 from "~/assets/images/photos/parallax/img2.jpg";
+
 export default function usePageLoadingAnimation() {
   function loadPageLoadingAnimation() {
     if ($(".cover").length) {
@@ -17,7 +20,7 @@ export default function usePageLoadingAnimation() {
           // Home Parallax
           if ($(".parallax-image").length) {
             $(".parallax-image").parallax({
-              imageSrc: "/images/photos/parallax/parallax-1.jpg",
+              imageSrc: parallaxImage1,
               zIndex: "1",
             });
           }
@@ -25,7 +28,7 @@ export default function usePageLoadingAnimation() {
           // Home Parallax Counterup
           if ($(".parallax-counter").length) {
             $(".parallax-counter").parallax({
-              imageSrc: "/images/photos/parallax/parallax-2.jpg",
+              imageSrc: parallaxImage2,
               zIndex: "1",
             });
           }
@@ -33,7 +36,6 @@ export default function usePageLoadingAnimation() {
         }, 300);
       }
     );
-    // $(window).on("load", );
   }
 
   onMounted(() => {
@@ -44,4 +46,6 @@ export default function usePageLoadingAnimation() {
       window.removeEventListener("load", loadPageLoadingAnimation);
     };
   });
+
+  return loadPageLoadingAnimation;
 }

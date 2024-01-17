@@ -27,8 +27,20 @@ contact
 			right: 0px;
 			margin: auto;
 			background: #F5F5F5;
-			color: $primaryColor;
+			color: $headingLight;
 			margin-bottom: 20px;
+
+			&.location {
+				background: $color3;
+			}
+
+			&.phone {
+				background: $primaryColor;
+			}
+
+			&.mail {
+				background: $color2;
+			}
 
 			i {
 				display: block;
