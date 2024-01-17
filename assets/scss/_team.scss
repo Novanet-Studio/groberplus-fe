@@ -18,6 +18,11 @@ our team
 		@include transition(.3s);
 		width: 291px;
 		height: 232px;
+
+		img {
+			max-width: 291px;
+			max-height: 232px;
+		}
 	}
 
 	.content {
@@ -26,9 +31,9 @@ our team
 		background: #fff;
 		box-shadow: 0 2px 48px 0 rgba(0,0,0,0.13);
 		right: -100px;
-		top: 14%;
+		top: 18%;
 		width: 80%;
-		height: 183px;
+		height: 145px;
 		padding-left: 50px;
 		display: flex;
 		align-items: center;
