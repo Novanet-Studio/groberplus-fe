@@ -5,11 +5,11 @@
 // <meta name="keywords" content="inox, startup, saas, agency, development, html, template, tempload" />
 // <meta name="author" content="tempload"/>
 
-useSeoMeta({
-  title: "Projects",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-});
+// useSeoMeta({
+//   title: "Home",
+//   description:
+//     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+// });
 </script>
 
 <template>

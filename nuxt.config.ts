@@ -114,8 +114,12 @@ export default defineNuxtConfig({
       start_url: "/",
       icons: [
         {
-          src: "~/assets/images/favicon/favicon.png",
-          sizes: "512x512",
+          src: "/icon-192x192.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          src: "/icon.png",
           type: "image/png",
         },
       ],
