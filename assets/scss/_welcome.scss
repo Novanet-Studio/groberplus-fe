@@ -1,0 +1,156 @@
+/* 
+---------------------------------------------
+welcome
+--------------------------------------------- 
+*/
+
+.welcome {
+	background: url(../images/welcome-bg.png) left center no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+
+
+	.welcome-content {
+		width: 100%;
+		position: relative;
+
+		.welcome-text {
+			h1 {
+				@include font($normal, 32px);
+				line-height: 48px;
+				letter-spacing: 1.3px;
+				margin-bottom: 35px;
+				color: $headingDark;
+			}
+
+			p {
+				@include font($normal, 16px);
+				line-height: 28px;
+				letter-spacing: 0.53px;
+				color: $textDark;
+				margin-bottom: 35px;
+			}
+		}
+
+		.slider-wrapper {
+			position: absolute;
+			top: 0px;
+			padding-left: 70px;
+
+			.base {
+				position: absolute;
+				width: 60%;
+				height: 230px;
+				left: 0px;
+				bottom: -0px;
+				background: #fff;
+				box-shadow: 0 2px 48px 0 rgba(0,0,0,0.13);
+
+				.prev {
+					position: absolute;
+					right: 70px;
+					bottom: 33px;
+					font-size: 40px;
+					line-height: 40px;
+					cursor: pointer;
+					z-index: 999;
+				}
+				.next {
+					position: absolute;
+					right: 30px;
+					bottom: 33px;
+					font-size: 40px;
+					line-height: 40px;
+					cursor: pointer;
+					z-index: 999;
+				}
+			}
+
+			.owl-carousel {
+				position: relative;
+				z-index: 2;
+
+				.item {
+
+					.img {
+						width: 100%;
+						height: auto;
+						overflow: hidden;
+						position: relative;
+						margin-bottom: 20px;
+					}
+
+					.text {
+						visibility: hidden;
+						opacity: 0;
+						transition:visibility 0.3s linear,opacity 0.3s linear;
+
+						h5 {
+							@include font($medium, 16px);
+							letter-spacing: 0.53px;
+							margin-bottom: 10px;
+							color: $headingDark;
+						}
+
+						p {
+							@include font($normal, 14px);
+							color: $textDark;
+							letter-spacing: 0.47px;
+							line-height: 26px;
+						}
+					}
+				}
+
+				.firstActiveItem {
+					.text {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width : 1400px) {
+	.welcome {
+		.welcome-content {
+			margin-top: 100px;
+		}
+	}
+}
+
+@media (max-width : 1200px) {
+	.welcome {
+		padding-top: 60px;
+		padding-bottom: 100px;
+
+		.welcome-content {
+
+			.slider-wrapper {
+				.base {
+					width: 100%;
+					left: 15px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width : 991px) {
+	.welcome {
+
+		.welcome-content {
+			.welcome-text {
+				text-align: center;
+				margin-bottom: 50px;
+
+				a {
+					margin: auto;
+				}
+			}
+		}
+	}
+}

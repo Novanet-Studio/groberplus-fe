@@ -1,0 +1,55 @@
+/* ----------------------------------------------------------------------------------------
+Template: inox - Kitchen & Interior Design Template
+Version: 1.1.0
+Author: tempload - support@tempload.com
+ -----------------------------------------------------------------------------------------*/
+
+/* ---------------------------------------------
+Table of contents
+------------------------------------------------
+01. font & reset css
+02. reset
+03. header
+04. global
+05. parallax
+06. our team
+07. blog
+08. footer
+09. pages
+10. faq
+11. aside
+12. contact
+13. preloader
+
+--------------------------------------------- */
+
+
+@import 'mixins';
+
+@import 'theme-options';
+
+@import 'reset';
+
+@import 'header';
+
+@import 'welcome';
+
+@import 'global';
+
+@import 'parallax';
+
+@import 'team';
+
+@import 'blog';
+
+@import 'footer';
+
+@import 'pages';
+
+@import 'faq';
+
+@import 'aside';
+
+@import 'contact';
+
+@import 'preloader';

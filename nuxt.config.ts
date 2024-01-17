@@ -92,7 +92,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["./assets/css/style.css"],
+  css: ["~/assets/scss/style.scss"],
 
   typescript: {
     tsConfig: {
@@ -112,6 +112,13 @@ export default defineNuxtConfig({
       background_color: "#ffffff",
       display: "standalone",
       start_url: "/",
+      icons: [
+        {
+          src: "~/assets/images/favicon/favicon.png",
+          sizes: "512x512",
+          type: "image/png",
+        },
+      ],
     },
   },
 

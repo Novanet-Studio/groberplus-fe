@@ -1,0 +1,108 @@
+/* 
+---------------------------------------------
+our team
+--------------------------------------------- 
+*/
+
+.person-item {
+	margin-bottom: 45px;
+	float: left;
+	width: 100%;
+
+	.img {
+		position: relative;
+		z-index: 2;
+		margin-top: 14px;
+		float: left;
+		box-shadow: 0 2px 48px 0 rgba(0,0,0,0.13);
+		@include transition(.3s);
+	}
+
+	.content {
+		position: absolute;
+		z-index: 1;
+		background: #fff;
+		box-shadow: 0 2px 48px 0 rgba(0,0,0,0.13);
+		right: 15px;
+		top: 0px;
+		width: 80%;
+		height: 183px;
+		padding-left: 120px;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+
+		.text {
+			width: 100%;
+			position: relative;
+			min-height: 85px;
+
+			&:before {
+				content: '';
+				position: absolute;
+				width: 5px;
+				height: 85px;
+				right: 0px;
+				background: #DDDDDD;
+				@include transition(.3s);
+			}
+
+			.user-name {
+				display: block;
+				width: 100%;
+				@include font($normal, 16px);
+				letter-spacing: 0.69px;
+				color: $headingDark;
+				margin-bottom: 5px;
+				margin-top: 3px;
+			}
+
+			span {
+				display: block;
+				@include font($normal, 12px);
+				color: $textDark;
+				letter-spacing: 0.52px;
+				margin-bottom: 10px;
+			}
+
+			ul {
+				overflow-x: hidden;
+
+				li {
+					float: left;
+
+					a {
+						display: inline-block;
+						font-size: 14px;
+						color: #6F8BA4;
+						margin-right: 15px;
+					}
+				}
+			}
+		}
+	}
+
+	&.active {
+		.content {
+			.text {
+				&:before {
+					background: $primaryColor;
+				}
+			}
+		}
+	}
+
+	&:hover {
+		.img {
+			margin-top: -15px;
+		}
+
+		.content {
+			.text {
+				&:before {
+					background: $primaryColor;
+				}
+			}
+		}
+	}
+}

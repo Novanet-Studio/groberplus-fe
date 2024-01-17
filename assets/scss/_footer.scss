@@ -1,0 +1,124 @@
+/* 
+---------------------------------------------
+footer
+--------------------------------------------- 
+*/
+
+footer {
+	background: $primaryColor;
+	padding-top: 70px;
+
+	img.logo {
+		margin-bottom: 30px;
+	}
+
+	.text {
+		@include font($normal, 14px);
+		color: $textLight;
+		line-height: 30px;
+		letter-spacing: 0.88px;
+	}
+
+	h5 {
+		@include font($normal, 16px);
+		color: #fff;
+		letter-spacing: 0.69px;
+		line-height: 30px;
+		margin-bottom: 30px !important;
+	}
+
+	.social {
+		overflow: hidden;
+		margin-top: 10px;
+
+		li {
+			float: left;
+			font-size: 16px;
+			margin-right: 10px;
+
+			a {
+				color: #fff;
+			}
+		}
+	}
+
+	.footer-nav {
+		li {
+			a {
+				display: block;
+				overflow: hidden;
+
+				&:hover {
+					span {
+						padding-left: 5px;
+					}
+				}
+
+				i {
+					float: left;
+					height: 32px;
+					line-height: 32px;
+					margin-right: 12px;
+					font-size: 14px;
+					color: #fff;
+				}
+
+				span {
+					float: left;
+					height: 32px;
+					line-height: 32px;
+					@include font($normal, 14px);
+					color: $textLight;
+					@include transition(.3s);
+				}
+			}
+		}
+	}
+
+	.address {
+		p {
+			display: block;
+			overflow: hidden;
+			@include font($normal, 14px);
+			color: #fff;
+			line-height: 26px;
+			letter-spacing: 0.88px;
+			margin-bottom: 5px;
+
+			a {
+				color: $textLight;
+			}
+		}
+	}
+
+	.copyright {
+		text-align: center;
+		border-top: 1px solid #343641;
+		margin-top: 30px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		@include font($normal, 14px);
+		color: $textLight;
+		letter-spacing: 0.88px;
+	}
+}
+
+@media (max-width : 991px) {
+	footer {
+		.social {
+			margin-bottom: 30px;
+		}
+		
+		.text {
+			margin-bottom: 30px;
+		}
+
+		h5 {
+			margin-bottom: 15px;
+		}
+
+		.footer-nav {
+			margin-bottom: 30px;
+		}
+	}
+}

@@ -1,0 +1,472 @@
+/* 
+---------------------------------------------
+pages
+--------------------------------------------- 
+*/
+
+.page {
+
+	.cover {
+		margin-top: 100px;
+		min-height: 400px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+
+		&:before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0%;
+			top: 0%;
+			right: 0%;
+			bottom: 0%;
+			background: #000;
+			z-index: 2;
+			opacity: 0.60;
+		}
+
+		.cover-top {
+			position: relative;
+			width: 100%;
+			z-index: 3;
+			text-align: center;
+			transform: perspective(1px) translateY(0%);
+			overflow: hidden;
+
+			h1 {
+				@include font($normal, 28px);
+				line-height: 42px;
+				letter-spacing: 1.4px;
+				color: #fff;
+				text-align: center;
+				margin-bottom: 60px;
+			}
+
+			.breadcrumb {
+				position: relative;
+				z-index: 9;
+				float: none;
+				@include radius(0px);
+				background: none;
+				padding: 0px;
+				padding-left: 15px;
+				padding-right: 15px;
+				text-align: center;
+				display: inline-block;
+				box-shadow: 0 2px 48px 0 rgba(0,0,0,0.13);
+				margin: 0px;
+				border: 1px solid #fff;
+
+				li {
+					@include font($normal, 14px);
+					color: $textLight;
+					line-height: 30px;
+					margin-left: 10px;
+					display: inline-block;
+
+					&:after {
+						font-family: FontAwesome;
+						content: "\f105";
+						margin-left: 10px;
+						color: #fff;
+					}
+
+					&:first-child {
+						margin-left: 0px;
+					}
+
+					&:last-child {
+						&:after {
+							content: '';
+							margin-left: 0px;
+						}
+					}
+
+					a {
+						@include font($normal, 14px);
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+
+	.page-bottom {
+		padding-top: 120px;
+		padding-bottom: 90px;
+		@include font($normal, 16px);
+		letter-spacing: 0.88px;
+		line-height: 28px;
+		color: $textDark;
+
+		p {
+			margin-bottom: 45px;
+			@include font($normal, 16px);
+			line-height: 28px;
+			letter-spacing: 1px;
+		}
+
+		.project-grid {
+
+			.project-grid-item {
+				@include transition(.3s);
+				display: block;
+				margin-bottom: 30px;
+
+				.img {
+					width: 100%;
+					height: 228px;
+					position: relative;
+					overflow: hidden;
+				}
+
+				.text {
+					background: #fff;
+					box-shadow: 0 2px 48px 0 rgba(0,0,0,0.08);
+					width: 90%;
+					margin: auto;
+					position: relative;
+					z-index: 2;
+					margin-top: -30px;
+					@include transition(.3s);
+					text-align: center;
+					padding: 30px 25px;
+
+					h3 {
+						@include font($normal, 16px);
+						color: $headingDark;
+						letter-spacing: 0.7px;
+						margin-bottom: 10px;
+					}
+
+					p {
+						margin-bottom: 0px;
+						@include font($normal, 14px);
+						color: $textDark;
+						letter-spacing: 0.88px;
+						line-height: 26px;
+					}
+				}
+
+				&:hover {
+					padding-bottom: 10px;
+
+					.text {
+						margin-top: -40px;
+					}
+				}
+			}
+		}
+
+		.project-list {
+
+			.project-list-item {
+				@include transition(.3s);
+				display: block;
+				margin-bottom: 30px;
+				position: relative;
+				display: flex;
+				align-items: center;
+
+				.img {
+					width: 45%;
+					height: 228px;
+					float: left;
+					position: relative;
+					overflow: hidden;
+				}
+
+				.text {
+					background: #fff;
+					box-shadow: 0 2px 48px 0 rgba(0,0,0,0.08);
+					width: 70%;
+					right: 0px;
+					position: absolute;
+					z-index: 2;
+					text-align: left;
+					padding: 30px;
+					@include transition(.3s);
+
+					h3 {
+						@include font($normal, 16px);
+						color: $headingDark;
+						letter-spacing: 0.7px;
+						margin-bottom: 10px;
+					}
+
+					p {
+						margin-bottom: 0px;
+						@include font($normal, 14px);
+						color: $textDark;
+						letter-spacing: 0.88px;
+						line-height: 26px;
+					}
+				}
+
+				&:hover {
+					.text {
+						box-shadow: 0 2px 48px 0 rgba(0,0,0,0.20);
+					}
+				}
+			}
+		}
+
+		.page-single {
+
+			.page-single-img {
+				position: relative;
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				.play {
+					display: block;
+					width: 80px;
+					height: 80px;
+					position: absolute;
+					z-index: 2;
+					text-align: center;
+					transition: all .3s ease-in-out;
+
+					&:hover {
+						transform: scale(1.1);
+					}
+
+					&:before {
+						content: '';
+						@include radius(100%);
+						position: absolute;
+						left: 0px;
+						top: 0px;
+						background: #fff;
+						width: 80px;
+						height: 80px;
+						z-index: 2;
+						opacity: .39;
+					}
+
+					&:after {
+						content: '';
+						@include radius(100%);
+						position: absolute;
+						left: 10px;
+						top: 10px;
+						background: #fff;
+						width: 60px;
+						height: 60px;
+						z-index: 2;
+					}
+
+					i {
+						position: absolute;
+						z-index: 3;
+						width: 80px;
+						left: 0px;
+						padding-left: 7px;
+						line-height: 80px;
+						font-size: 20px;
+						color: $headingDark;
+					}
+				}
+			}
+
+			.page-single-text {
+				.title {
+					@include font($semi, 16px);
+					color: $headingDark;
+					letter-spacing: 1px;
+					margin-bottom: 20px;
+				}
+
+				.sub-title {
+					@include font($normal, 18px);
+					color: $headingDark;
+					letter-spacing: 1px;
+					margin-bottom: 30px;
+				}
+
+				p {
+					@include font($normal, 16px);
+					color: $textDark;
+					letter-spacing: 1px;
+					line-height: 28px;
+					margin-bottom: 30px;
+				}
+
+				.info-list {
+					background: #fff;
+					box-shadow: 0 2px 48px 0 rgba(0,0,0,0.06);
+					padding: 15px 20px;
+					margin-bottom: 40px;
+
+					strong {
+						display: inline-block;
+						@include font($normal, 16px);
+						color: $headingDark;
+						letter-spacing: 1px;
+					}
+
+					span {
+						display: inline-block;
+						@include font($normal, 16px);
+						color: $textDark;
+						letter-spacing: 1px;
+					}
+				}
+
+				.count {
+					strong {
+						display: block;
+						@include font($normal, 30px);
+						letter-spacing: 1.29px;
+						color: $headingDark;
+						margin-bottom: 10px;
+						text-align: center;
+					}
+
+					span {
+						display: block;
+						@include font($normal, 16px);
+						letter-spacing: 0.69px;
+						color: $textDark;
+						text-align: center;
+					}
+				}
+
+				.skill-wrapper {
+
+					.skill-item {
+						margin-bottom: 20px;
+
+						strong {
+							@include font($normal, 14px);
+							color: $headingDark;
+							letter-spacing: 0.88px;
+							display: block;
+							margin-bottom: 5px;
+						}
+
+						.skill-progress {
+							width: 100%;
+							position: relative;
+							height: 10px;
+							@include radius(2px);
+							background: #E2E2E2;
+
+							.line {
+								position: absolute;
+								height: 10px;
+								@include radius(2px);
+								background: $primaryColor;
+								width: 0%;
+								@include transition(.3s);
+							}
+						}
+					}
+				}
+			}
+		}
+	}	
+}
+
+.project-grid {
+
+	.project-grid-item {
+		@include transition(.3s);
+		display: block;
+		margin-bottom: 30px;
+
+		.img {
+			width: 100%;
+			height: 228px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.text {
+			background: #fff;
+			box-shadow: 0 2px 48px 0 rgba(0,0,0,0.08);
+			width: 90%;
+			margin: auto;
+			position: relative;
+			z-index: 2;
+			margin-top: -30px;
+			@include transition(.3s);
+			text-align: center;
+			padding: 30px 25px;
+
+			h3 {
+				@include font($normal, 16px);
+				color: $headingDark;
+				letter-spacing: 0.7px;
+				margin-bottom: 10px;
+			}
+
+			p {
+				margin-bottom: 0px;
+				@include font($normal, 14px);
+				color: $textDark;
+				letter-spacing: 0.88px;
+				line-height: 26px;
+			}
+		}
+
+		&:hover {
+			padding-bottom: 10px;
+
+			.text {
+				margin-top: -40px;
+			}
+		}
+	}
+}
+
+.pagination {
+	margin-bottom: 30px;
+
+	li {
+		a {
+			width: 40px;
+			height: 40px;
+			text-align: center;
+			line-height: 24px;
+			@include font($normal, 14px);
+			color: $headingDark;
+			@include transition(.3s);
+
+			&:hover, &.active {
+				background: $primaryColor;
+				color: #fff;
+			}
+		}
+	}
+}
+
+@media (max-width : 991px) {
+	.page {
+		.cover {
+			margin-top: 80px;
+		}
+
+		.page-bottom {
+			.page-single {
+				.page-single-img {
+					margin-bottom: 30px;
+				}
+
+				.page-single-text {
+					.count {
+						span {
+							margin-bottom: 30px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,353 @@
+/* 
+---------------------------------------------
+global
+--------------------------------------------- 
+*/
+
+html,
+body {
+	background: #f5f5f5;
+	color: $textDark;
+	font-family: $font;
+}
+
+::selection {
+	background: $primaryColor;
+	color: #fff;
+}
+
+::-moz-selection {
+	background: $primaryColor;
+	color: #fff;
+}
+
+.section {
+	padding-top: 110px;
+	padding-bottom: 90px;
+
+	&.white {
+		background: #fff;
+	}
+}
+
+
+.left-heading {
+
+	.section-title {
+		@include font($normal, 28px);
+		color: $headingDark;
+		letter-spacing: 1.75px;
+		line-height: 42px;
+		margin-bottom: 30px;
+	}
+}
+
+.center-heading {
+	text-align: center;
+
+	.section-title {
+		@include font($normal, 28px);
+		color: $headingDark;
+		letter-spacing: 1.75px;
+		line-height: 38px;
+		margin-bottom: 20px;
+	}
+}
+
+.center-text {
+	text-align: center;
+	@include font($normal, 16px);
+	color: $textDark;
+	line-height: 28px;
+	letter-spacing: 1px;
+	margin-bottom: 60px;
+
+	p {
+		margin-bottom: 30px;
+	}
+}
+
+.left-text {
+	@include font($normal, 16px);
+	color: $textDark;
+	line-height: 28px;
+	letter-spacing: 1px;
+
+	p {
+		margin-bottom: 30px;
+
+		&.dark {
+			color: $headingDark;
+		}
+	}
+
+	ul {
+		li {
+			@include font($normal, 14px);
+			color: $textDark;
+			padding-left: 30px;
+			position: relative;
+			margin-bottom: 10px;
+			@include transition(.3s);
+
+			&:before {
+				font-family: FontAwesome;
+    			content: "\f178";
+    			left: 0px;
+    			position: absolute;
+			}
+
+			&:hover {
+				padding-left: 40px;
+			}
+		}
+	}
+}
+
+
+.align-self-center {
+	-ms-flex-item-align: center!important;
+		align-self: center!important;
+}
+
+.align-self-bottom {
+	-ms-flex-item-align: flex-end!important;
+		align-self: flex-end!important;
+}
+
+
+.dark-btn {
+	display: block;
+	width: 195px;
+	height: 45px;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid $primaryColor;
+
+	.show-btn {
+		position: absolute;
+		top: 0px;
+		cursor: pointer;
+		left: 0px;
+		width: 195px;
+		height: 45px;
+		line-height: 45px;
+		text-align: center;
+		@include transition(.3s);
+		@include font($bold, 12px);
+		letter-spacing: 1.35px;
+		color: $primaryColor;
+	}
+	.hide-btn {
+		position: absolute;
+		top: 0px;
+		cursor: pointer;
+		left: 195px;
+		width: 195px;
+		height: 45px;
+		line-height: 45px;
+		text-align: center;
+		@include transition(.3s);
+		@include font($bold, 12px);
+		letter-spacing: 1.35px;
+		color: #fff;
+		background: $primaryColor;
+	}
+
+	&:hover {
+		.show-btn {
+			left: -195px;
+		}
+		.hide-btn {
+			left: 0px;
+		}
+	}
+}
+
+.light-btn {
+	display: block;
+	width: 195px;
+	height: 45px;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #fff;
+
+	.show-btn {
+		position: absolute;
+		top: 0px;
+		cursor: pointer;
+		left: 0px;
+		width: 195px;
+		height: 45px;
+		line-height: 45px;
+		text-align: center;
+		@include transition(.3s);
+		@include font($bold, 12px);
+		letter-spacing: 1.35px;
+		color: #fff;
+	}
+	.hide-btn {
+		position: absolute;
+		top: 0px;
+		cursor: pointer;
+		left: 195px;
+		width: 195px;
+		height: 45px;
+		line-height: 45px;
+		text-align: center;
+		@include transition(.3s);
+		@include font($bold, 12px);
+		letter-spacing: 1.35px;
+		color: $primaryColor;
+		background: #fff;
+	}
+
+	&:hover {
+		.show-btn {
+			left: -195px;
+		}
+		.hide-btn {
+			left: 0px;
+		}
+	}
+}
+
+blockquote {
+	margin-bottom: 28px;
+	padding: 30px;
+	padding-top: 40px;
+	background: #fff;
+	overflow: hidden;
+
+	.text {
+		position: relative;
+		text-align: center;
+
+		p {
+			position: relative;
+			width: 100%;
+			z-index: 2;
+			margin-bottom: 10px !important;
+		}
+
+		&:before {
+			font-family: FontAwesome;
+			content: "\f10d";
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			z-index: 1;
+			font-size: 40px;
+			color: darken(#F4F8FB, 5%);
+		}
+		&:after {
+			font-family: FontAwesome;
+			content: "\f10e";
+			position: absolute;
+			right: 0px;
+			bottom: 0px;
+			z-index: 1;
+			font-size: 40px;
+			color: darken(#F4F8FB, 5%);
+		}
+	}
+
+	.author {
+		color: $headingDark;
+		text-align: center;
+	}
+}
+
+
+.page-gallery {
+	height: 185px;
+	display: block;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+.margin-bottom-0 {
+	margin-bottom: 0px !important;
+}
+
+.margin-bottom-10 {
+	margin-bottom: 10px !important;
+}
+
+.margin-bottom-20 {
+	margin-bottom: 20px !important;
+}
+
+.margin-bottom-30 {
+	margin-bottom: 30px !important;
+}
+
+.margin-bottom-40 {
+	margin-bottom: 40px !important;
+}
+
+.margin-bottom-50 {
+	margin-bottom: 50px !important;
+}
+
+.margin-bottom-60 {
+	margin-bottom: 60px !important;
+}
+
+.margin-bottom-90 {
+	margin-bottom: 90px !important;
+}
+
+.margin-top-10 {
+	margin-top: 10px !important;
+}
+
+.margin-top-20 {
+	margin-top: 20px !important;
+}
+
+.margin-top-30 {
+	margin-top: 30px !important;
+}
+
+.margin-top-40 {
+	margin-top: 40px !important;
+}
+
+.margin-top-50 {
+	margin-top: 50px !important;
+}
+
+.margin-top-60 {
+	margin-top: 60px !important;
+}
+
+.padding-top-0 {
+	padding-top: 0px !important;
+}
+
+.padding-top-70 {
+	padding-top: 70px !important;
+}
+
+.padding-bottom-120 {
+	padding-bottom: 120px !important;
+}
+
+.padding-bottom-140 {
+	padding-bottom: 140px !important;
+}
+
+@media (max-width : 991px) {
+	html, body {
+	    overflow-x: hidden;
+	}
+
+	.mobile-bottom-fix {
+		margin-bottom: 30px;
+	}
+
+	.page-gallery {
+		height: 140px;
+	}
+}
