@@ -11,7 +11,7 @@ function handleResize() {
   mobileNav();
 }
 
-onMounted(() => {
+function loadAction() {
   showLoader.value = true;
   handleResize();
   loadingPageAnimation();
@@ -19,6 +19,10 @@ onMounted(() => {
   setTimeout(() => {
     showLoader.value = false;
   }, 2000);
+}
+
+onMounted(() => {
+  loadAction();
 
   window.addEventListener("resize", handleResize);
 
@@ -40,7 +44,7 @@ onMounted(() => {
 <style>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1s;
+  transition: opacity 0.8s;
 }
 
 .fade-enter-from,

@@ -25,6 +25,14 @@ export default function welcomeFix() {
           position: "relative",
         });
       }
+
+      $(".slider-wrapper").css("opacity", "0");
+      $(".slider-wrapper").animate(
+        {
+          opacity: 1,
+        },
+        2000
+      );
     }
   }
 

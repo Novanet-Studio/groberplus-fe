@@ -25,6 +25,14 @@ export default function useOwlCarousel() {
         checkClasses();
       });
 
+      welcomeSlider.css("opacity", "0");
+      welcomeSlider.animate(
+        {
+          opacity: 1,
+        },
+        600
+      );
+
       function checkClasses() {
         var total = $(".owl-carousel .owl-stage .owl-item.active").length;
 
