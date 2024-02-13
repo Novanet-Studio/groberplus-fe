@@ -1,25 +1,35 @@
 <script setup lang="ts">
-const { findOne } = useStrapi();
 import type { Strapi4ResponseMany } from "@nuxtjs/strapi/dist/runtime/types";
 import type { CategoryAttributes } from "~/types/app";
+import { useQuery } from "@tanstack/vue-query";
 
 const route = useRoute();
+const { findOne } = useStrapi();
 
-const response = (await findOne("categories", {
-  populate: {
-    image: true,
-    products: {
-      populate: ["image"],
-    },
+const { data: response, suspense } = useQuery({
+  queryKey: ["categories"],
+  queryFn: () =>
+    findOne("categories", {
+      populate: {
+        image: true,
+        products: {
+          populate: ["image"],
+        },
+      },
+      filters: {
+        slug: {
+          $eq: route.params.slug,
+        },
+      },
+    }) as unknown as Strapi4ResponseMany<CategoryAttributes>,
+  select(data) {
+    return data;
   },
-  filters: {
-    slug: {
-      $eq: route.params.slug,
-    },
-  },
-})) as unknown as Strapi4ResponseMany<CategoryAttributes>;
+});
 
-const category = computed(() => (response.data as any)[0]);
+const category = computed(() => (response.value?.data)![0]);
+
+await suspense();
 </script>
 
 <template>

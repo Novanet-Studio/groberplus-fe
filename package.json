@@ -21,6 +21,7 @@
   "dependencies": {
     "@nuxt/image": "^1.2.0",
     "@nuxtjs/strapi": "^1.11.0",
+    "@tanstack/vue-query": "^5.20.2",
     "markdown-it": "^14.0.0",
     "sass": "^1.69.7"
   }
