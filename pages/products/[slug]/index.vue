@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { findOne } = useStrapi();
 import type { Strapi4ResponseMany } from "@nuxtjs/strapi/dist/runtime/types";
-import type { Category, CategoryAttributes } from "~/types/app";
+import type { CategoryAttributes } from "~/types/app";
 
 const route = useRoute();
 
@@ -43,8 +43,7 @@ const category = computed(() => (response.data as any)[0]);
           <div class="row">
             <div class="col-lg-12">
               <ol class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="project-grid.html">Category</a></li>
+                <li><NuxtLink to="/">Home</NuxtLink></li>
                 <li class="active">{{ category.attributes?.title || "" }}</li>
               </ol>
             </div>
