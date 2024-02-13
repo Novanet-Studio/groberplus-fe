@@ -278,7 +278,7 @@ pages
 			.page-single-text {
 				.title {
 					@include font($semi, 16px);
-					color: $headingDark;
+					color: $primaryColor;
 					letter-spacing: 1px;
 					margin-bottom: 20px;
 				}
