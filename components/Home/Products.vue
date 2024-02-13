@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const { find } = useStrapi();
+import type { Category } from "~/types/app";
 
-const categories = await find("categories", {
+const categories = await find<Category>("categories", {
   populate: "*",
 });
 </script>
@@ -24,14 +25,16 @@ const categories = await find("categories", {
                 :alt="category.attributes.image.data.attributes.name"
               />
             </div>
-            <div class="content">
-              <div class="text">
-                <h5 class="title">{{ category.attributes.title }}</h5>
-                <span>
-                  {{ category.attributes.description }}
-                </span>
+            <NuxtLink :to="`/products/${category.attributes.slug}`">
+              <div class="content" style="cursor: pointer">
+                <div class="text">
+                  <h5 class="title">{{ category.attributes.title }}</h5>
+                  <span>
+                    {{ category.attributes.description }}
+                  </span>
+                </div>
               </div>
-            </div>
+            </NuxtLink>
           </div>
         </div>
       </div>

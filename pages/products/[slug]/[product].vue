@@ -1,12 +1,33 @@
+<script setup lang="ts">
+const { findOne } = useStrapi();
+import type { Category } from "~/types/app";
+
+const route = useRoute();
+
+const category = await findOne("categories", {
+  populate: "*",
+  filters: {
+    slug: {
+      $eq: route.params.slug,
+    },
+  },
+});
+</script>
+
 <template>
   <section class="page">
     <!-- ***** Page Top Start ***** -->
-    <div class="cover" data-image="assets/images/photos/cover.jpg">
+    <div
+      class="cover"
+      :data-image="
+        getImageUrl(category.data?.[0]?.attributes.image?.data?.attributes?.url)
+      "
+    >
       <div class="cover-top">
         <div class="container">
           <div class="row">
             <div class="offset-lg-3 col-lg-6">
-              <h1>MODERN ROOMS</h1>
+              <h1>{{ category.data?.[0]?.attributes?.title || "" }}</h1>
             </div>
           </div>
           <div class="row">
