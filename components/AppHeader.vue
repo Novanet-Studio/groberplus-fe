@@ -6,10 +6,10 @@ const menuItems = [
     name: "Home",
     path: "/",
   },
-  {
-    name: "Company",
-    path: "/company",
-  },
+  // {
+  //   name: "Company",
+  //   path: "/company",
+  // },
   {
     name: "Products",
     path: "/products",
