@@ -35,6 +35,12 @@ export interface PurpleAttributes {
   publishedAt: string;
 }
 
+export interface CategoryAttributes extends PurpleAttributes {
+  products: {
+    data: Product[];
+  };
+}
+
 export interface Gallery {
   data: DAT[];
 }

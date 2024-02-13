@@ -1,10 +1,11 @@
 <script setup lang="ts">
 const { findOne } = useStrapi();
-import type { Category } from "~/types/app";
+import type { Strapi4ResponseMany } from "@nuxtjs/strapi/dist/runtime/types";
+import type { Category, CategoryAttributes } from "~/types/app";
 
 const route = useRoute();
 
-const response = await findOne<any>("categories", {
+const response = (await findOne("categories", {
   populate: {
     image: true,
     products: {
@@ -16,13 +17,9 @@ const response = await findOne<any>("categories", {
       $eq: route.params.slug,
     },
   },
-});
+})) as unknown as Strapi4ResponseMany<CategoryAttributes>;
 
-const category = computed(() => (response.data as any)[0]) as unknown as Ref<{
-  attributes: Category;
-}>;
-
-console.log(category.value.attributes);
+const category = computed(() => (response.data as any)[0]);
 </script>
 
 <template>
@@ -104,34 +101,6 @@ console.log(category.value.attributes);
             </div>
           </NuxtLink>
         </div>
-        <!-- <div class="col-lg-4 col-md-6 col-sm-12">
-          <a href="project-single.html" class="project-grid-item">
-            <div class="img">
-              <img src="assets/images/photos/project/2.jpg" alt="" />
-            </div>
-            <div class="text">
-              <h3>MODERN BATHROOM</h3>
-              <p>
-                Curabitur nec imperdiet elit. Ut non erat imperdiet, condi men
-                tum turpis nec, sceleris que.
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-          <a href="project-single.html" class="project-grid-item">
-            <div class="img">
-              <img src="assets/images/photos/project/3.jpg" alt="" />
-            </div>
-            <div class="text">
-              <h3>DECORATIVE CHAIR</h3>
-              <p>
-                Aliquam at eros vitae elit vulputate venenatis sed id augue.
-                Nuncmi nisl, pulvinar.
-              </p>
-            </div>
-          </a>
-        </div> -->
       </div>
     </div>
   </section>

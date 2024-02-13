@@ -1,35 +1,34 @@
 <script setup lang="ts">
 import MarkdownIt from "markdown-it";
+import type { Strapi4ResponseMany } from "@nuxtjs/strapi/dist/runtime/types";
 import type { Category, Product } from "~/types/app";
 
 const { findOne } = useStrapi();
 const route = useRoute();
 const markdown = new MarkdownIt();
 
-const categoryResponse = await findOne("categories", {
+const categoryResponse = (await findOne("categories", {
   populate: "*",
   filters: {
     slug: {
       $eq: route.params.slug,
     },
   },
-});
+})) as unknown as Strapi4ResponseMany<any>;
 
-const productResponse = await findOne("products", {
+const productResponse = (await findOne("products", {
   populate: "*",
   filters: {
     slug: {
       $eq: route.params.product,
     },
   },
-});
+})) as unknown as Strapi4ResponseMany<any>;
 
 const category = computed(() => categoryResponse.data[0]) as Ref<{
   attributes: Category;
 }>;
 const product = computed(() => productResponse.data[0]) as Ref<Product>;
-
-console.log("product ->", product.value);
 </script>
 
 <template>
