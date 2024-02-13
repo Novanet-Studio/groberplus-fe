@@ -27,11 +27,9 @@ const category = computed(() => (response.data as any)[0]);
     <!-- ***** Page Top Start ***** -->
     <div
       class="cover"
-      :style="{
-        backgroundImage: `url(${getImageUrl(
-          category.attributes.image?.data?.attributes?.url
-        )})`,
-      }"
+      :data-image="
+        getImageUrl(category.attributes.image?.data?.attributes?.url)
+      "
     >
       <div class="cover-top">
         <div class="container">
