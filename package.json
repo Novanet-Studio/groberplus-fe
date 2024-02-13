@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.29",
+    "@types/markdown-it": "^13.0.7",
     "@types/owl.carousel": "^2.3.6",
     "@vite-pwa/nuxt": "^0.4.0",
     "nuxt": "^3.9.1",
@@ -20,6 +21,7 @@
   "dependencies": {
     "@nuxt/image": "^1.2.0",
     "@nuxtjs/strapi": "^1.11.0",
+    "markdown-it": "^14.0.0",
     "sass": "^1.69.7"
   }
 }

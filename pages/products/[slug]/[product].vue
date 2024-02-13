@@ -1,8 +1,10 @@
 <script setup lang="ts">
-const { findOne } = useStrapi();
+import MarkdownIt from "markdown-it";
 import type { Category, Product } from "~/types/app";
 
+const { findOne } = useStrapi();
 const route = useRoute();
+const markdown = new MarkdownIt();
 
 const categoryResponse = await findOne("categories", {
   populate: "*",
@@ -89,7 +91,9 @@ console.log("product ->", product.value);
                 <div class="col-lg-6 col-md-12 col-sm-12 align-self-center">
                   <div class="page-single-text">
                     <h5 class="title">{{ product.attributes.title }}</h5>
-                    <div v-html="product.attributes.description"></div>
+                    <div
+                      v-html="markdown.render(product.attributes.description)"
+                    ></div>
 
                     <img
                       v-if="product.attributes.hasSlowMotion"
