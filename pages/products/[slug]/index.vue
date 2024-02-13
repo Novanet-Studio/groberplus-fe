@@ -31,6 +31,11 @@ const { data: response, suspense } = useQuery({
 const category = computed(() => (response.value?.data)![0]);
 
 await suspense();
+
+onMounted(() => {
+  $(".parallax-image").css("display", "none");
+  $(".parallax-slider").css("display", "none");
+});
 </script>
 
 <template>
