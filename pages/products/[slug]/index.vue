@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { useQuery } from "@tanstack/vue-query";
 import type { Strapi4ResponseMany } from "@nuxtjs/strapi/dist/runtime/types";
 import type { CategoryAttributes } from "~/types/app";
-import { useQuery } from "@tanstack/vue-query";
 
 const route = useRoute();
 const { findOne } = useStrapi();
@@ -25,6 +25,7 @@ const { data: response, suspense } = useQuery({
   select(data) {
     return data;
   },
+  staleTime: 1000 * 60 * 15, // 15 minutes
 });
 
 const category = computed(() => (response.value?.data)![0]);

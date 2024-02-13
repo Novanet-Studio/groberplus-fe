@@ -1,34 +1,57 @@
 <script setup lang="ts">
 import MarkdownIt from "markdown-it";
+import { useQuery } from "@tanstack/vue-query";
 import type { Strapi4ResponseMany } from "@nuxtjs/strapi/dist/runtime/types";
-import type { Category, Product } from "~/types/app";
+import type { CategoryAttributes, ProductAttributes } from "~/types/app";
 
 const { findOne } = useStrapi();
 const route = useRoute();
 const markdown = new MarkdownIt();
 
-const categoryResponse = (await findOne("categories", {
-  populate: "*",
-  filters: {
-    slug: {
-      $eq: route.params.slug,
-    },
+const { data: categoryResponse, suspense: categorySuspense } = useQuery({
+  queryKey: ["categories"],
+  queryFn: () =>
+    findOne("categories", {
+      populate: {
+        image: true,
+        products: {
+          populate: ["image"],
+        },
+      },
+      filters: {
+        slug: {
+          $eq: route.params.slug,
+        },
+      },
+    }) as unknown as Strapi4ResponseMany<CategoryAttributes>,
+  select(data) {
+    return data;
   },
-})) as unknown as Strapi4ResponseMany<any>;
+  staleTime: 1000 * 60 * 5, // 5 minutes
+});
 
-const productResponse = (await findOne("products", {
-  populate: "*",
-  filters: {
-    slug: {
-      $eq: route.params.product,
-    },
+const { data: productResponse, suspense: productSuspense } = useQuery({
+  queryKey: ["product", route.params.product],
+  queryFn: () =>
+    findOne("products", {
+      populate: "*",
+      filters: {
+        slug: {
+          $eq: route.params.product,
+        },
+      },
+    }) as unknown as Strapi4ResponseMany<ProductAttributes>,
+  select(data) {
+    return data;
   },
-})) as unknown as Strapi4ResponseMany<any>;
+  staleTime: 1000 * 60 * 5, // 5 minutes
+});
 
-const category = computed(() => categoryResponse.data[0]) as Ref<{
-  attributes: Category;
-}>;
-const product = computed(() => productResponse.data[0]) as Ref<Product>;
+const category = computed(() => categoryResponse.value?.data[0]!);
+const product = computed(() => productResponse.value?.data[0]!);
+
+await categorySuspense();
+await productSuspense();
 </script>
 
 <template>
