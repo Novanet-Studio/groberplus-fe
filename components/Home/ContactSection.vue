@@ -37,7 +37,6 @@
             data-hue="#ffc400"
             data-title="inox"
             data-icon-path="assets/images/marker.png"
-            data-content="455 West Orchard Street<br>Kings Mountain, NC 28086<br><br><a href='mailto:support@yourbrand.com'>support@yourbrand.com</a>"
           ></div>
           <!-- ***** Google Maps End ***** -->
         </div>
