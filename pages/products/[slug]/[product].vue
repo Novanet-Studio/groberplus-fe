@@ -88,9 +88,7 @@ await productSuspense();
         </div>
       </div>
     </div>
-    <!-- ***** Page Top End ***** -->
 
-    <!-- ***** Page Content Start ***** -->
     <div class="page-bottom">
       <div class="container">
         <div class="row">
@@ -114,7 +112,14 @@ await productSuspense();
                   <div class="page-single-text">
                     <h5 class="title">{{ product.attributes.title }}</h5>
                     <div
+                      class="prod-cont-tab"
+                      v-html="product.attributes.description"
+                      v-if="product.attributes.description.includes('<ul>')"
+                    ></div>
+                    <div
+                      class="prod-cont-tab"
                       v-html="markdown.render(product.attributes.description)"
+                      v-else
                     ></div>
 
                     <img
@@ -147,6 +152,90 @@ await productSuspense();
         </div>
       </div>
     </div>
-    <!-- ***** Page Content End ***** -->
   </section>
 </template>
+
+<style>
+.prod-cont-tab ul {
+  display: inline-block;
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+.prod-cont-tab ul {
+  display: inline-block;
+  margin: 0;
+  list-style: none;
+}
+
+.prod-cont-tab ul li {
+  margin: 3px 0;
+  padding: 8px;
+  background-color: #e3e3e4;
+  text-align: center;
+}
+
+.prod-cont-tab ul li:first-of-type {
+  background: #e21737;
+  color: #fff;
+  border-top: #e21737 1px solid;
+  border-bottom: #e21737 1px solid;
+}
+
+.prod-cont-tab ul:nth-child(1) li:first-of-type,
+.prod-cont-tab ul.list-prod2 li:first-of-type {
+  background: #fff;
+  color: #e21737;
+  border-bottom: 2px solid #96989a;
+  border-top: none;
+}
+
+.prod-cont-tab p {
+  padding-top: 10px;
+}
+
+.prod-cont-tab p b {
+  padding: 2px;
+  color: #fff;
+  background: #e21737;
+}
+
+.prod-cont-tab p em {
+  font-style: normal !important;
+  color: #e21737;
+}
+
+@media only screen and (min-width: 320px) {
+  .prod-cont-tab ul:nth-child(1),
+  .prod-cont-tab ul:nth-child(2),
+  .prod-cont-tab ul:nth-child(3),
+  .prod-cont-tab ul:nth-child(4) {
+    width: 100%;
+  }
+
+  .prod-cont-tab img {
+    width: 18%;
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .prod-cont-tab ul:nth-child(1),
+  .prod-cont-tab ul:nth-child(2),
+  .prod-cont-tab ul:nth-child(3),
+  .prod-cont-tab ul:nth-child(4) {
+    width: auto;
+  }
+
+  .prod-cont-tab img {
+    width: 12%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .prod-cont-tab img {
+    width: 6.5%;
+  }
+}
+</style>
