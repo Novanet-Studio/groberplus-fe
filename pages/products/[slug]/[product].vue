@@ -95,7 +95,7 @@ await productSuspense();
           <div class="col-lg-12">
             <div class="page-single">
               <div class="row margin-bottom-90">
-                <div class="col-lg-6 col-md-12 col-sm-12 align-self-center">
+                <div class="col-lg-4 col-md-12 col-sm-12 align-self-center">
                   <div class="page-single-img">
                     <img
                       :src="
@@ -108,7 +108,7 @@ await productSuspense();
                     />
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 align-self-center">
+                <div class="col-lg-8 col-md-12 col-sm-12 align-self-center">
                   <div class="page-single-text">
                     <h5 class="title">{{ product.attributes.title }}</h5>
                     <div
