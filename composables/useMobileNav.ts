@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 export default function useMobileNav() {
   function mobileNav() {
     const width = $(window).width();

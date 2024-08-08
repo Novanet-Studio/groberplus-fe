@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 import parallaxImage1 from "~/assets/images/photos/parallax/img.jpg";
 import parallaxImage2 from "~/assets/images/photos/parallax/img2.jpg";
 
