@@ -33,12 +33,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <Transition name="fade">
-    <AppPreloader v-if="showLoader" />
-  </Transition>
-  <AppHeader />
-  <slot />
-  <AppFooter />
+  <ClientOnly>
+    <Transition name="fade">
+      <AppPreloader v-if="showLoader" />
+    </Transition>
+    <AppHeader />
+    <slot />
+    <AppFooter />
+  </ClientOnly>
 </template>
 
 <style>
@@ -52,3 +54,4 @@ onMounted(() => {
   opacity: 0;
 }
 </style>
+import type { ClientOnly } from '#build/components';

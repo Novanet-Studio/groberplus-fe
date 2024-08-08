@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  ssr: false,
   modules: ["@vite-pwa/nuxt", "@nuxt/image", "@nuxtjs/strapi"],
 
   app: {
@@ -42,14 +43,14 @@ export default defineNuxtConfig({
       ],
       script: [
         // JQuery
-        // {
-        //   type: "text/javascript",
-        //   src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
-        //   integrity:
-        //     "sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==",
-        //   crossorigin: "anonymous",
-        //   referrerpolicy: "no-referrer",
-        // },
+        {
+          type: "text/javascript",
+          src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
+          integrity:
+            "sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==",
+          crossorigin: "anonymous",
+          referrerpolicy: "no-referrer",
+        },
         // Bootstrap
         {
           type: "text/javascript",

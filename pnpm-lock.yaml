@@ -14,9 +14,6 @@ dependencies:
   '@tanstack/vue-query':
     specifier: ^5.20.2
     version: 5.20.2(vue@3.4.10)
-  jquery:
-    specifier: 3.6.0
-    version: 3.6.0
   markdown-it:
     specifier: ^14.0.0
     version: 14.0.0
@@ -5520,10 +5517,6 @@ packages:
   /jiti@1.21.6:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
-
-  /jquery@3.6.0:
-    resolution: {integrity: sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==}
-    dev: false
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
