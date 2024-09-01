@@ -33,14 +33,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <ClientOnly>
-    <Transition name="fade">
-      <AppPreloader v-if="showLoader" />
-    </Transition>
-    <AppHeader />
-    <slot />
-    <AppFooter />
-  </ClientOnly>
+  <!-- <ClientOnly> -->
+  <Transition name="fade">
+    <AppPreloader v-if="showLoader" />
+  </Transition>
+  <AppHeader />
+  <slot />
+  <AppFooter />
+  <!-- </ClientOnly> -->
 </template>
 
 <style>

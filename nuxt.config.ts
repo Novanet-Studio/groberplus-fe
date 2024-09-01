@@ -6,7 +6,9 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      titleTemplate: (title) => `${title} - GroberPlus`,
+      titleTemplate: {
+        textContent: `%s - GroberPlus`,
+      },
       htmlAttrs: {
         lang: "en",
       },
@@ -136,5 +138,5 @@ export default defineNuxtConfig({
     dir: "assets/images",
   },
 
-  compatibilityDate: "2024-08-07",
+  compatibilityDate: "2024-09-01",
 });
