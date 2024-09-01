@@ -6,7 +6,7 @@ import type { CategoryAttributes } from "~/types/app";
 const route = useRoute();
 const { findOne } = useStrapi();
 
-const { data: response, suspense } = useQuery({
+const { data: category, suspense } = useQuery({
   queryKey: ["categories"],
   queryFn: () =>
     findOne("categories", {
@@ -23,12 +23,10 @@ const { data: response, suspense } = useQuery({
       },
     }) as unknown as Strapi4ResponseMany<CategoryAttributes>,
   select(data) {
-    return data;
+    return data.data[0];
   },
   staleTime: 1000 * 60 * 15, // 15 minutes
 });
-
-const category = computed(() => (response.value?.data)![0]);
 
 await suspense();
 
@@ -72,7 +70,7 @@ onMounted(() => {
   <section class="section white">
     <div class="container">
       <!-- ***** Section Title Start ***** -->
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-lg-12">
           <div class="center-heading">
             <h2 class="section-title">Smilar Projects</h2>
@@ -86,7 +84,7 @@ onMounted(() => {
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- ***** Section Title End ***** -->
 
       <div class="row project-grid">
@@ -119,3 +117,4 @@ onMounted(() => {
   </section>
   <!-- ***** Project End ***** -->
 </template>
+import type { data } from "jquery";
