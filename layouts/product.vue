@@ -5,7 +5,10 @@ import type { CategoryAttributes } from "~/types/app";
 
 const route = useRoute();
 
-const response = (await findOne("categories", {
+const { data: category, suspense: categorySuspense } = useQuery({
+  queryKey: ["category"],
+  queryFn: () =>
+  findOne("categories", {
   populate: {
     image: true,
     products: {
@@ -17,12 +20,14 @@ const response = (await findOne("categories", {
       $eq: route.params.slug,
     },
   },
-})) as unknown as Strapi4ResponseMany<CategoryAttributes>;
-
-const category = computed(() => (response.data as any)[0]);
-const productName = computed(() => {
-  return (route.params.product as string).split("-").join(" ");
+}) as as unknown as Strapi4ResponseMany<CategoryAttributes>,
+  select(data) {
+    return data.data[0];
+  },
+  staleTime: 1000 * 60 * 5, // 5 minutes
 });
+
+const productName = computed(() => (route.params.product as string).split("-").join(" "));
 </script>
 
 <template>
