@@ -1,4 +1,8 @@
 export default function getImageUrl(path: string) {
-  const isDev = import.meta.env.DEV;
-  return isDev ? `http://localhost:1337${path}` : path;
+  const {
+    public: { strapi },
+  } = useRuntimeConfig();
+  const isLocal = import.meta.dev && strapi.url.includes("localhost");
+
+  return isLocal ? `http://localhost:1337${path}` : path;
 }
