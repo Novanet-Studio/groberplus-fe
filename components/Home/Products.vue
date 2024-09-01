@@ -1,9 +1,19 @@
 <script setup lang="ts">
-const { find } = useStrapi();
+import { useQuery } from "@tanstack/vue-query";
 import type { Category } from "~/types/app";
 
-const categories = await find<Category>("categories", {
-  populate: "*",
+const { find } = useStrapi();
+
+const { data: categories, suspense: categoriesSuspense } = useQuery({
+  queryKey: ["categories"],
+  queryFn: () =>
+    find<Category>("categories", {
+      populate: "*",
+    }) as unknown as Strapi4ResponseMany<CategoryAttributes>,
+  select(data) {
+    return data.data;
+  },
+  staleTime: 1000 * 60 * 5, // 5 minutes
 });
 </script>
 
@@ -13,7 +23,7 @@ const categories = await find<Category>("categories", {
       <div class="row justify-content-around">
         <div
           class="col-lg-5 col-md-6 col-sm-12 position-relative"
-          v-for="(category, index) in categories.data"
+          v-for="(category, index) in categories"
           :key="category?.attributes?.slug"
         >
           <div class="person-item">
@@ -21,10 +31,10 @@ const categories = await find<Category>("categories", {
               <img
                 :src="
                   getImageUrl(
-                    category?.attributes?.image?.data?.attributes?.url
+                    category?.attributes?.image?.data[0]?.attributes?.url
                   )
                 "
-                :alt="category?.attributes?.image?.data?.attributes?.name"
+                :alt="category?.attributes?.image?.data[0]?.attributes?.name"
               />
             </div>
             <NuxtLink :to="`/products/${category?.attributes?.slug}`">
