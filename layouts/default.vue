@@ -54,4 +54,3 @@ onMounted(() => {
   opacity: 0;
 }
 </style>
-import type { ClientOnly } from '#build/components';
