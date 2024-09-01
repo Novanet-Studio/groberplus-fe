@@ -14,23 +14,25 @@ const categories = await find<Category>("categories", {
         <div
           class="col-lg-5 col-md-6 col-sm-12 position-relative"
           v-for="(category, index) in categories.data"
-          :key="category.attributes.slug"
+          :key="category?.attributes?.slug"
         >
           <div class="person-item">
             <div class="img">
               <img
                 :src="
-                  getImageUrl(category.attributes.image.data.attributes.url)
+                  getImageUrl(
+                    category?.attributes?.image?.data?.attributes?.url
+                  )
                 "
-                :alt="category.attributes.image.data.attributes.name"
+                :alt="category?.attributes?.image?.data?.attributes?.name"
               />
             </div>
-            <NuxtLink :to="`/products/${category.attributes.slug}`">
+            <NuxtLink :to="`/products/${category?.attributes?.slug}`">
               <div class="content" style="cursor: pointer">
                 <div class="text">
-                  <h5 class="title">{{ category.attributes.title }}</h5>
+                  <h5 class="title">{{ category?.attributes?.title }}</h5>
                   <span>
-                    {{ category.attributes.description }}
+                    {{ category?.attributes?.description }}
                   </span>
                 </div>
               </div>

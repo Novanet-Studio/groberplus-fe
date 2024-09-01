@@ -1,5 +1,3 @@
-// import $ from "jquery";
-
 export default function welcomeFix() {
   const height = ref<number>();
   const wwidth = ref<number>();

@@ -1,5 +1,3 @@
-// import $ from "jquery";
-
 export default function useOwlCarousel() {
   function loadCarousel() {
     if ($(".owl-carousel").length) {
