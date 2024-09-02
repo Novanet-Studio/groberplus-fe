@@ -8,26 +8,28 @@ const route = useRoute();
 const { data: category, suspense: categorySuspense } = useQuery({
   queryKey: ["category"],
   queryFn: () =>
-  findOne("categories", {
-  populate: {
-    image: true,
-    products: {
-      populate: ["image"],
-    },
-  },
-  filters: {
-    slug: {
-      $eq: route.params.slug,
-    },
-  },
-}) as as unknown as Strapi4ResponseMany<CategoryAttributes>,
+    findOne("categories", {
+      populate: {
+        image: true,
+        products: {
+          populate: ["image"],
+        },
+      },
+      filters: {
+        slug: {
+          $eq: route.params.slug,
+        },
+      },
+    }) as unknown as Strapi4ResponseMany<CategoryAttributes>,
   select(data) {
     return data.data[0];
   },
   staleTime: 1000 * 60 * 5, // 5 minutes
 });
 
-const productName = computed(() => (route.params.product as string).split("-").join(" "));
+const productName = computed(() =>
+  (route.params.product as string).split("-").join(" ")
+);
 </script>
 
 <template>
