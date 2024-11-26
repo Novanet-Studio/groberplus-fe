@@ -100,7 +100,7 @@ await productSuspense();
                     <img
                       :src="
                         getImageUrl(
-                          product.attributes.image.data.attributes.url
+                          product.attributes.images.data[0].attributes.url
                         )
                       "
                       class="img-fluid float-left"
@@ -113,17 +113,20 @@ await productSuspense();
                     <h5 class="title">{{ product.attributes.title }}</h5>
                     <div
                       class="prod-cont-tab"
-                      v-html="product.attributes.description"
-                      v-if="product.attributes.description.includes('<ul>')"
+                      v-html="product?.attributes?.description"
+                      v-if="product?.attributes?.description?.includes('<ul>')"
                     ></div>
                     <div
                       class="prod-cont-tab"
-                      v-html="markdown.render(product.attributes.description)"
-                      v-else
+                      v-html="markdown.render(product?.attributes?.description)"
+                      v-if="
+                        product?.attributes?.description &&
+                        !product?.attributes?.description?.includes('<ul>')
+                      "
                     ></div>
 
                     <img
-                      v-if="product.attributes.hasSlowMotion"
+                      v-if="product?.attributes?.hasSlowMotion"
                       src="/slow-motion.png"
                       alt="Slow motion icon"
                     />
@@ -132,7 +135,7 @@ await productSuspense();
               </div>
               <div class="row page-gallery-wrapper">
                 <div
-                  v-for="gallery in product.attributes.gallery.data"
+                  v-for="gallery in product?.attributes?.gallery?.data"
                   class="col-lg-3 col-md-6 col-sm-6 col-6"
                   :key="gallery.id"
                 >

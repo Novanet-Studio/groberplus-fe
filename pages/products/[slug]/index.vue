@@ -13,7 +13,7 @@ const { data: category, suspense } = useQuery({
       populate: {
         image: true,
         products: {
-          populate: ["image"],
+          populate: ["images"],
         },
       },
       filters: {
@@ -25,7 +25,6 @@ const { data: category, suspense } = useQuery({
   select(data) {
     return data.data[0];
   },
-  staleTime: 1000 * 60 * 15, // 15 minutes
 });
 
 await suspense();
@@ -42,7 +41,7 @@ onMounted(() => {
     <div
       class="cover"
       :data-image="
-        getImageUrl(category.attributes.image?.data?.attributes?.url)
+        getImageUrl(category.attributes.image?.data[0]?.attributes?.url)
       "
     >
       <div class="cover-top">
@@ -98,9 +97,12 @@ onMounted(() => {
           >
             <div class="img">
               <img
-                v-if="product?.attributes?.image?.data?.attributes?.url"
-                :src="getImageUrl(product.attributes.image.data.attributes.url)"
+                v-if="product?.attributes?.images?.data[0]?.attributes?.url"
+                :src="
+                  getImageUrl(product.attributes.images.data[0].attributes.url)
+                "
                 alt=""
+                style="width: 100%; height: 100%; object-fit: cover"
               />
             </div>
             <div class="text">
