@@ -35,6 +35,7 @@ const { data: categories, suspense: categoriesSuspense } = useQuery({
                   )
                 "
                 :alt="category?.attributes?.image?.data[0]?.attributes?.name"
+                style="width: 100%; height: 100%; object-fit: cover"
               />
             </div>
             <NuxtLink :to="`/products/${category?.attributes?.slug}`">
