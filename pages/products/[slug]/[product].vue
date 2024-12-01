@@ -52,6 +52,14 @@ const product = computed(() => productResponse.value?.data[0]!);
 
 await categorySuspense();
 await productSuspense();
+
+function convertFirstRowToTh(html: string) {
+  return html.replace(
+    /<tr>(.*?)<\/tr>/,
+    (match, p1) =>
+      `<tr>${p1.replace(/<td>/g, "<th>").replace(/<\/td>/g, "</th>")}</tr>`
+  );
+}
 </script>
 
 <template>
@@ -113,15 +121,12 @@ await productSuspense();
                     <h5 class="title">{{ product.attributes.title }}</h5>
                     <div
                       class="prod-cont-tab"
-                      v-html="product?.attributes?.description"
-                      v-if="product?.attributes?.description?.includes('<ul>')"
-                    ></div>
-                    <div
-                      class="prod-cont-tab"
-                      v-html="markdown.render(product?.attributes?.description)"
-                      v-if="
-                        product?.attributes?.description &&
-                        !product?.attributes?.description?.includes('<ul>')
+                      v-html="
+                        product?.attributes?.description?.includes('<')
+                          ? convertFirstRowToTh(
+                              product?.attributes?.description
+                            )
+                          : markdown.render(product?.attributes?.description)
                       "
                     ></div>
 
@@ -135,13 +140,19 @@ await productSuspense();
               </div>
               <div class="row page-gallery-wrapper">
                 <div
-                  v-for="gallery in product?.attributes?.gallery?.data"
+                  v-for="gallery in product?.attributes?.images?.data"
                   class="col-lg-3 col-md-6 col-sm-6 col-6"
                   :key="gallery.id"
                 >
                   <a
                     :href="getImageUrl(gallery.attributes.url)"
                     class="page-gallery"
+                    style="
+                      object-fit: cover;
+                      object-position: center;
+                      background-size: cover;
+                      background-position: center;
+                    "
                   >
                     <img
                       :src="getImageUrl(gallery.attributes.url)"
@@ -240,5 +251,37 @@ await productSuspense();
   .prod-cont-tab img {
     width: 6.5%;
   }
+}
+
+.prod-cont-tab table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.prod-cont-tab th,
+.prod-cont-tab td {
+  border: 2px solid white; /* Bordes más gruesos y de color blanco */
+  padding: 4px; /* Menos padding en las celdas */
+  text-align: center;
+}
+
+.prod-cont-tab th {
+  background-color: #e21737;
+  color: white;
+  font-weight: lighter;
+}
+
+.prod-cont-tab th:first-child {
+  background-color: white; /* Primer header de color blanco */
+  color: #e21737; /* Texto del primer header en rojo */
+}
+
+.prod-cont-tab tr {
+  background-color: #dbdede;
+}
+
+.prod-cont-tab tr:hover {
+  background-color: #ddd;
 }
 </style>
