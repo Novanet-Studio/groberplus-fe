@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import { useQuery } from "@tanstack/vue-query";
+import { useQuery, useQueryClient } from "@tanstack/vue-query";
 import type { Strapi4ResponseMany } from "@nuxtjs/strapi/dist/runtime/types";
 import type { CategoryAttributes } from "~/types/app";
 
 const route = useRoute();
 const { findOne } = useStrapi();
+
+const queryClient = useQueryClient();
+
+function invalidateCategories() {
+  queryClient.invalidateQueries({ queryKey: ["categories"] });
+}
 
 const { data: category, suspense } = useQuery({
   queryKey: ["categories"],
@@ -54,7 +60,9 @@ onMounted(() => {
           <div class="row">
             <div class="col-lg-12">
               <ol class="breadcrumb">
-                <li><NuxtLink to="/">Home</NuxtLink></li>
+                <li>
+                  <NuxtLink to="/" @click="invalidateCategories">Home</NuxtLink>
+                </li>
                 <li class="active">{{ category.attributes?.title || "" }}</li>
               </ol>
             </div>
