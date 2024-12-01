@@ -135,6 +135,41 @@ function convertFirstRowToTh(html: string) {
                       src="/slow-motion.png"
                       alt="Slow motion icon"
                     />
+
+                    <div
+                      style="
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        margin-top: 1rem;
+                      "
+                    >
+                      <div
+                        v-for="blueprint in product?.attributes?.blueprints
+                          ?.data"
+                        class="col-lg-3 col-md-6 col-sm-6 col-6"
+                        style="width: 150px; height: 150px"
+                        :key="blueprint.id"
+                      >
+                        <a
+                          :href="getImageUrl(blueprint.attributes.url)"
+                          class="page-gallery"
+                        >
+                          <img
+                            :src="getImageUrl(blueprint.attributes.url)"
+                            :alt="blueprint.attributes.name"
+                            style="
+                              width: 100%;
+                              height: 100%;
+                              object-fit: cover;
+                              object-position: center;
+                              background-size: cover;
+                              background-position: center;
+                            "
+                          />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -147,16 +182,18 @@ function convertFirstRowToTh(html: string) {
                   <a
                     :href="getImageUrl(gallery.attributes.url)"
                     class="page-gallery"
-                    style="
-                      object-fit: cover;
-                      object-position: center;
-                      background-size: cover;
-                      background-position: center;
-                    "
                   >
                     <img
                       :src="getImageUrl(gallery.attributes.url)"
                       :alt="gallery.attributes.name"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                        background-size: cover;
+                        background-position: center;
+                      "
                     />
                   </a>
                 </div>
