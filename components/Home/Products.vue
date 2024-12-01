@@ -18,7 +18,7 @@ const { data: categories, suspense: categoriesSuspense } = useQuery({
 </script>
 
 <template>
-  <section class="section">
+  <section class="section" id="products">
     <div class="container">
       <div class="row justify-content-around">
         <div

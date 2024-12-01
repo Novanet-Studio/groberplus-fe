@@ -14,7 +14,7 @@ import { carousel } from "~/data/images";
                 We improve and adapt our solutions, providing them an extra
                 value by means of new patents, materials and finishes.
               </p>
-              <a class="dark-btn" href="project-grid.html">
+              <a class="dark-btn" href="#products">
                 <span class="show-btn">Know our products</span>
                 <span class="hide-btn">Know our products</span>
               </a>
