@@ -136,19 +136,11 @@ function convertFirstRowToTh(html: string) {
                       alt="Slow motion icon"
                     />
 
-                    <div
-                      style="
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 10px;
-                        margin-top: 1rem;
-                      "
-                    >
+                    <div class="blueprint-grid">
                       <div
                         v-for="blueprint in product?.attributes?.blueprints
                           ?.data"
-                        class="col-lg-3 col-md-6 col-sm-6 col-6"
-                        style="width: 150px; height: 150px"
+                        class="col-lg-3 col-md-6 col-sm-6 col-6 blueprint-item"
                         :key="blueprint.id"
                       >
                         <a
@@ -158,14 +150,7 @@ function convertFirstRowToTh(html: string) {
                           <img
                             :src="getImageUrl(blueprint.attributes.url)"
                             :alt="blueprint.attributes.name"
-                            style="
-                              width: 100%;
-                              height: 100%;
-                              object-fit: cover;
-                              object-position: center;
-                              background-size: cover;
-                              background-position: center;
-                            "
+                            class="blueprint-image"
                           />
                         </a>
                       </div>
@@ -186,14 +171,7 @@ function convertFirstRowToTh(html: string) {
                     <img
                       :src="getImageUrl(gallery.attributes.url)"
                       :alt="gallery.attributes.name"
-                      style="
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        object-position: center;
-                        background-size: cover;
-                        background-position: center;
-                      "
+                      class="gallery-image"
                     />
                   </a>
                 </div>
@@ -207,17 +185,33 @@ function convertFirstRowToTh(html: string) {
 </template>
 
 <style>
-.prod-cont-tab ul {
-  display: inline-block;
-  margin: 0;
-  list-style: none;
-  padding-left: 0;
+.blueprint-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.blueprint-item {
+  width: 150px;
+  height: 150px;
+}
+
+.blueprint-image,
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background-size: cover;
+  background-position: center;
 }
 
 .prod-cont-tab ul {
   display: inline-block;
   margin: 0;
   list-style: none;
+  padding-left: 0;
 }
 
 .prod-cont-tab ul li {
@@ -257,6 +251,38 @@ function convertFirstRowToTh(html: string) {
   color: #e21737;
 }
 
+.prod-cont-tab table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.prod-cont-tab th,
+.prod-cont-tab td {
+  border: 2px solid white;
+  padding: 4px;
+  text-align: center;
+}
+
+.prod-cont-tab th {
+  background-color: #e21737;
+  color: white;
+  font-weight: lighter;
+}
+
+.prod-cont-tab th:first-child {
+  background-color: white;
+  color: #e21737;
+}
+
+.prod-cont-tab tr {
+  background-color: #dbdede;
+}
+
+.prod-cont-tab tr:hover {
+  background-color: #ddd;
+}
+
 @media only screen and (min-width: 320px) {
   .prod-cont-tab ul:nth-child(1),
   .prod-cont-tab ul:nth-child(2),
@@ -288,37 +314,5 @@ function convertFirstRowToTh(html: string) {
   .prod-cont-tab img {
     width: 6.5%;
   }
-}
-
-.prod-cont-tab table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.prod-cont-tab th,
-.prod-cont-tab td {
-  border: 2px solid white; /* Bordes más gruesos y de color blanco */
-  padding: 4px; /* Menos padding en las celdas */
-  text-align: center;
-}
-
-.prod-cont-tab th {
-  background-color: #e21737;
-  color: white;
-  font-weight: lighter;
-}
-
-.prod-cont-tab th:first-child {
-  background-color: white; /* Primer header de color blanco */
-  color: #e21737; /* Texto del primer header en rojo */
-}
-
-.prod-cont-tab tr {
-  background-color: #dbdede;
-}
-
-.prod-cont-tab tr:hover {
-  background-color: #ddd;
 }
 </style>
