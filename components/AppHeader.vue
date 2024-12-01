@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const route = useRoute();
+const isMenuOpen = ref(false);
 
 const menuItems = [
   {
@@ -19,6 +20,10 @@ const menuItems = [
 function isActive(path: string) {
   return path === route.path;
 }
+
+function toggleMenu() {
+  isMenuOpen.value = !isMenuOpen.value;
+}
 </script>
 
 <template>
@@ -34,7 +39,15 @@ function isActive(path: string) {
             <!-- ***** Logo End ***** -->
 
             <!-- ***** Menu Start ***** -->
-            <ul class="nav">
+            <ul
+              class="nav"
+              :style="{
+                display: isMenuOpen ? 'block' : 'none',
+                transition: 'all 0.2s ease-in-out',
+                maxHeight: isMenuOpen ? '500px' : '0',
+                overflow: 'hidden',
+              }"
+            >
               <li v-for="item in menuItems" :key="item.name">
                 <NuxtLink
                   :class="{ active: isActive(item.path) }"
@@ -43,6 +56,13 @@ function isActive(path: string) {
                 >
               </li>
             </ul>
+            <a
+              class="menu-trigger"
+              :class="{ active: isMenuOpen }"
+              @click="toggleMenu"
+            >
+              <span>Menu</span>
+            </a>
             <!-- ***** Menu End ***** -->
           </nav>
         </div>
