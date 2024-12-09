@@ -7,8 +7,13 @@ const welcomeFix = useWelcomeFix();
 const mobileNav = useMobileNav();
 const queryClient = useQueryClient();
 const router = useRouter();
+const route = useRoute();
 
 const showLoader = ref(true);
+
+useHead({
+  meta: [{ property: "og:title", content: `GroberPlus ${route.meta.title}` }],
+});
 
 function handleResize() {
   welcomeFix();

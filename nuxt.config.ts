@@ -6,9 +6,27 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      titleTemplate: {
-        textContent: `%s - GroberPlus`,
+      title: {
+        textContent: `GroberPlus`,
       },
+      meta: [
+        {
+          name: "title",
+          content: "GroberPlus",
+        },
+        {
+          name: "description",
+          content: "GroberPlus",
+        },
+        {
+          name: "name",
+          content: "GroberPlus",
+        },
+        {
+          name: "author",
+          content: "Novanet Studio <info@novanet.studio>",
+        },
+      ],
       htmlAttrs: {
         lang: "en",
       },
