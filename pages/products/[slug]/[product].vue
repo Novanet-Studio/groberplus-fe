@@ -126,7 +126,9 @@ function convertFirstRowToTh(html: string) {
                           ? convertFirstRowToTh(
                               product?.attributes?.description
                             )
-                          : markdown.render(product?.attributes?.description)
+                          : markdown.render(
+                              product?.attributes?.description || ''
+                            )
                       "
                     ></div>
 
