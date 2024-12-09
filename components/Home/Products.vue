@@ -13,7 +13,6 @@ const { data: categories, suspense: categoriesSuspense } = useQuery({
   select(data) {
     return data.data;
   },
-  // staleTime: 1000 * 60 * 5, // 5 minutes
 });
 
 await categoriesSuspense();

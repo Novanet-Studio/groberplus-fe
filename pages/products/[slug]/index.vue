@@ -12,7 +12,11 @@ function invalidateCategories() {
   queryClient.invalidateQueries({ queryKey: ["categories"] });
 }
 
-const { data: category, suspense } = useQuery({
+const {
+  data: category,
+  suspense,
+  isLoading,
+} = useQuery({
   queryKey: ["categories"],
   queryFn: () =>
     findOne("categories", {
@@ -94,7 +98,7 @@ onMounted(() => {
       </div> -->
       <!-- ***** Section Title End ***** -->
 
-      <div class="row project-grid">
+      <div v-if="!isLoading" class="row project-grid">
         <div
           class="col-lg-4 col-md-6 col-sm-12"
           v-for="product in category.attributes.products.data"

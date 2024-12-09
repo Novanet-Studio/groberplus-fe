@@ -14,7 +14,6 @@ const { data: productsResponse, suspense: productsSuspense } = useQuery({
   select(data) {
     return data;
   },
-  staleTime: 1000 * 60 * 5, // 5 minutes
 });
 
 const products = computed(() => productsResponse.value?.data);

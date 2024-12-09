@@ -27,7 +27,6 @@ const { data: categoryResponse, suspense: categorySuspense } = useQuery({
   select(data) {
     return data;
   },
-  staleTime: 1000 * 60 * 5, // 5 minutes
 });
 
 const { data: productResponse, suspense: productSuspense } = useQuery({
@@ -44,7 +43,6 @@ const { data: productResponse, suspense: productSuspense } = useQuery({
   select(data) {
     return data;
   },
-  staleTime: 1000 * 60 * 5, // 5 minutes
 });
 
 const category = computed(() => categoryResponse.value?.data[0]!);

@@ -24,7 +24,6 @@ const { data: category, suspense: categorySuspense } = useQuery({
   select(data) {
     return data.data[0];
   },
-  staleTime: 1000 * 60 * 5, // 5 minutes
 });
 
 const productName = computed(() =>

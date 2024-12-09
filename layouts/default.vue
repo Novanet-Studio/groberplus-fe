@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { useQueryClient } from "@tanstack/vue-query";
+
 useOwlCarousel();
 const loadingPageAnimation = usePageLoadingAnimation();
 const welcomeFix = useWelcomeFix();
 const mobileNav = useMobileNav();
+const queryClient = useQueryClient();
+const router = useRouter();
 
 const showLoader = ref(true);
 
@@ -29,6 +33,13 @@ onMounted(() => {
   return () => {
     window.removeEventListener("resize", handleResize);
   };
+});
+
+onMounted(() => {
+  // Invalidate all queries on route change
+  router.beforeEach(() => {
+    queryClient.invalidateQueries();
+  });
 });
 </script>
 
