@@ -64,13 +64,17 @@ await productsSuspense();
                   >
                     <div class="img">
                       <img
+                        style="width: 100%; height: 100%; object-fit: cover"
+                        v-if="
+                          product.attributes.images.data[0]?.attributes?.url
+                        "
                         :src="
                           getImageUrl(
-                            product.attributes.image.data.attributes.url
+                            product.attributes.images.data[0].attributes.url
                           )
                         "
                         :alt="
-                          product.attributes.image.data.attributes
+                          product.attributes.images.data[0].attributes
                             ?.alternativeText || 'image'
                         "
                       />
