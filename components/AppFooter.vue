@@ -60,7 +60,7 @@
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <p class="copyright">© 2023 GröberPlus. All Rights Reserved.</p>
+          <p class="copyright">© 2024 GröberPlus. All Rights Reserved.</p>
         </div>
       </div>
     </div>
