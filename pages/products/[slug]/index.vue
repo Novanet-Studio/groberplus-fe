@@ -37,21 +37,24 @@ const {
   },
 });
 
+const imageUrl = computed(() => {
+  return getImageUrl(
+    category.value?.attributes?.image?.data[0]?.attributes?.url
+  );
+});
+
 await suspense();
 
-onMounted(() => {
-  $(".parallax-image").css("display", "none");
-  $(".parallax-slider").css("display", "none");
-});
+// onMounted(() => {
+//   $(".parallax-image").css("display", "none");
+//   $(".parallax-slider").css("display", "none");
+// });
 </script>
 
 <template>
   <section class="page">
     <!-- ***** Page Top Start ***** -->
-    <div
-      class="cover"
-      :data-image="category.attributes?.image?.data[0]?.attributes?.url"
-    >
+    <div class="cover" :data-image="imageUrl">
       <div class="cover-top">
         <div class="container">
           <div class="row">
@@ -74,10 +77,6 @@ onMounted(() => {
     </div>
     <!-- ***** Page Top End ***** -->
   </section>
-
-  <p>
-    {{ category.attributes.image?.data[0]?.attributes?.url }}
-  </p>
 
   <!-- ***** Project Start ***** -->
   <section class="section white" style="padding-top: 1rem">
