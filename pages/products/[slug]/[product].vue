@@ -136,6 +136,7 @@ function convertFirstRowToTh(html: string) {
                       v-if="product?.attributes?.hasSlowMotion"
                       src="/slow-motion.png"
                       alt="Slow motion icon"
+                      style="width: 4rem; height: 4rem"
                     />
 
                     <div class="blueprint-grid">
