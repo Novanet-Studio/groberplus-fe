@@ -120,10 +120,6 @@ onMounted(() => {
             </div>
             <div class="text">
               <h3>{{ product.attributes.title }}</h3>
-              <p>
-                Proin luctus odio et purus iaculis, et porta ex molestie.
-                Curabitur euismod nulla enim.
-              </p>
             </div>
           </NuxtLink>
         </div>
