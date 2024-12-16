@@ -1,5 +1,5 @@
 <template>
-  <section class="page">
+  <section class="page" id="contact">
     <!-- ***** Page Top Start ***** -->
     <!-- <div class="cover" data-image="assets/images/photos/cover.jpg">
       <div class="cover-top">

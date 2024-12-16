@@ -39,6 +39,17 @@ function toggleMenu() {
             <!-- ***** Logo End ***** -->
 
             <!-- ***** Menu Start ***** -->
+            <ul class="nav d-none d-lg-flex">
+              <li>
+                <NuxtLink to="/">Home</NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/products">Products</NuxtLink>
+              </li>
+              <li>
+                <a class="contact-btn" href="#contact">Contact</a>
+              </li>
+            </ul>
             <ul
               class="nav"
               :style="{
