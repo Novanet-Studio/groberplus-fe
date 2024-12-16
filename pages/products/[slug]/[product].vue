@@ -66,7 +66,7 @@ function convertFirstRowToTh(html: string) {
     <div
       class="cover"
       :data-image="
-        getImageUrl(category.attributes.image?.data?.attributes?.url)
+        getImageUrl(product.attributes.images.data[0].attributes.url)
       "
     >
       <div class="cover-top">

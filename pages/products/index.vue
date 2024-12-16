@@ -24,7 +24,12 @@ await productsSuspense();
 <template>
   <section class="page">
     <!-- ***** Page Top Start ***** -->
-    <div class="cover" data-image="~/assets/images/photos/cover.jpg">
+    <div
+      class="cover"
+      :data-image="
+        getImageUrl(products[0].attributes.images?.data[0]?.attributes?.url)
+      "
+    >
       <div class="cover-top">
         <div class="container">
           <div class="row">

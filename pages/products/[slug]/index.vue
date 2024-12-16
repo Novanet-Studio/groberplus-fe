@@ -50,9 +50,7 @@ onMounted(() => {
     <!-- ***** Page Top Start ***** -->
     <div
       class="cover"
-      :data-image="
-        getImageUrl(category.attributes.image?.data[0]?.attributes?.url)
-      "
+      :data-image="category.attributes?.image?.data[0]?.attributes?.url"
     >
       <div class="cover-top">
         <div class="container">
@@ -76,6 +74,10 @@ onMounted(() => {
     </div>
     <!-- ***** Page Top End ***** -->
   </section>
+
+  <p>
+    {{ category.attributes.image?.data[0]?.attributes?.url }}
+  </p>
 
   <!-- ***** Project Start ***** -->
   <section class="section white" style="padding-top: 1rem">
