@@ -108,23 +108,40 @@
             <!-- ***** Contact Form Start ***** -->
             <div class="col-lg-8 col-md-6 col-sm-12">
               <div class="contact-form">
-                <div class="row">
-                  <div class="col-lg-6 col-md-12 col-sm-12">
-                    <input type="text" placeholder="Name, surname" />
+                <form name="contact" method="POST" data-netlify="true">
+                  <input type="hidden" name="form-name" value="contact" />
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Name, surname"
+                        required
+                      />
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="E-Mail"
+                        required
+                      />
+                    </div>
+                    <div class="col-lg-12">
+                      <textarea
+                        name="message"
+                        placeholder="Your message"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="col-lg-12">
+                      <button class="dark-btn float-right" type="submit">
+                        <span class="show-btn">SUBMIT</span>
+                        <span class="hide-btn">SUBMIT</span>
+                      </button>
+                    </div>
                   </div>
-                  <div class="col-lg-6 col-md-12 col-sm-12">
-                    <input type="text" placeholder="E-Mail" />
-                  </div>
-                  <div class="col-lg-12">
-                    <textarea placeholder="Your message"></textarea>
-                  </div>
-                  <div class="col-lg-12">
-                    <button class="dark-btn float-right" type="submit">
-                      <span class="show-btn">SUBMIT</span>
-                      <span class="hide-btn">SUBMIT</span>
-                    </button>
-                  </div>
-                </div>
+                </form>
               </div>
             </div>
             <!-- ***** Contact Form End ***** -->

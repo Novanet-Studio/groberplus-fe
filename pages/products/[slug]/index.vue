@@ -128,4 +128,3 @@ onMounted(() => {
   </section>
   <!-- ***** Project End ***** -->
 </template>
-import type { data } from "jquery";
