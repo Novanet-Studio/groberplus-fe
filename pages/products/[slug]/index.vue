@@ -78,7 +78,8 @@ onMounted(() => {
   </section>
 
   <!-- ***** Project Start ***** -->
-  <section class="section white">
+  <section class="section white" style="padding-top: 1rem">
+    <BackBtn style="margin-bottom: 3rem" />
     <div class="container">
       <!-- ***** Section Title Start ***** -->
       <!-- <div class="row">

@@ -45,8 +45,10 @@ await productsSuspense();
     </div>
     <!-- ***** Page Top End ***** -->
 
+    <BackBtn />
+
     <!-- ***** Page Content Start ***** -->
-    <div class="page-bottom">
+    <div class="page-bottom" style="padding-top: 2rem">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">

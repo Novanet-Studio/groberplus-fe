@@ -95,7 +95,9 @@ function convertFirstRowToTh(html: string) {
       </div>
     </div>
 
-    <div class="page-bottom">
+    <BackBtn />
+
+    <div class="page-bottom" style="padding-top: 2rem">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
