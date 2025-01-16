@@ -1,24 +1,21 @@
 <script setup lang="ts">
 import { useQuery } from "@tanstack/vue-query";
-import type { Strapi4ResponseMany } from "@nuxtjs/strapi/dist/runtime/types";
-import type { ProductAttributes } from "~/types/app";
+import type { Category } from "~/types/app";
 
 const { find } = useStrapi();
 
-const { data: productsResponse, suspense: productsSuspense } = useQuery({
+const { data: categories, suspense: categoriesSuspense } = useQuery({
   queryKey: ["products"],
   queryFn: () =>
-    find("products", {
+    find<any>("categories", {
       populate: "*",
-    }) as unknown as Strapi4ResponseMany<ProductAttributes>,
+    }),
   select(data) {
-    return data;
+    return data.data;
   },
 });
 
-const products = computed(() => productsResponse.value?.data);
-
-await productsSuspense();
+await categoriesSuspense();
 </script>
 
 <template>
@@ -27,7 +24,9 @@ await productsSuspense();
     <div
       class="cover"
       :data-image="
-        getImageUrl(products[0].attributes.images?.data[0]?.attributes?.url)
+        getImageUrl(
+          categories?.[0]?.attributes?.image?.data[0]?.attributes?.url
+        )
       "
     >
       <div class="cover-top">
@@ -60,36 +59,34 @@ await productsSuspense();
             <div class="project-grid">
               <div class="row">
                 <div
-                  v-for="product in products"
-                  :key="product.attributes.slug"
+                  v-for="category in categories"
+                  :key="category.attributes.slug"
                   class="col-lg-4 col-md-6 col-sm-12"
                 >
                   <nuxt-link
                     class="project-grid-item"
-                    :to="`/products/${product.attributes.category.data.attributes.slug}/${product.attributes.slug}`"
+                    :to="`/products/${category.attributes.slug}`"
                   >
                     <div class="img">
                       <img
                         style="width: 100%; height: 100%; object-fit: cover"
                         v-if="
-                          product.attributes.images.data[0]?.attributes?.url
+                          category?.attributes?.image?.data[0]?.attributes?.url
                         "
                         :src="
                           getImageUrl(
-                            product.attributes.images.data[0].attributes.url
+                            category?.attributes?.image?.data[0]?.attributes
+                              ?.url
                           )
                         "
                         :alt="
-                          product.attributes.images.data[0].attributes
+                          category?.attributes?.image?.data[0].attributes
                             ?.alternativeText || 'image'
                         "
                       />
                     </div>
                     <div class="text">
-                      <h3>{{ product.attributes.title }}</h3>
-                      <!-- <p>
-                        {{ product.attributes.description }}
-                      </p> -->
+                      <h3>{{ category.attributes.title }}</h3>
                     </div>
                   </nuxt-link>
                 </div>

@@ -33,6 +33,14 @@ export interface PurpleAttributes {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
+  image: {
+    data: {
+      attributes: {
+        url: string;
+        name: string;
+      };
+    };
+  };
 }
 
 export interface CategoryAttributes extends PurpleAttributes {
