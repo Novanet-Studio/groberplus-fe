@@ -9,10 +9,6 @@
             <h2 class="section-title dotted">What We Do</h2>
           </div>
           <div class="left-text">
-            <!-- <p class="dark">
-              Etiam eu felis condimentum, lacinia lorem eget, dictum nisl.
-              Vestibulum lacinia erat at.
-            </p> -->
             <p class="margin-bottom-40">
               Has successfully implemented its robotization program for
               productive systems. Since last 21st May all our means of

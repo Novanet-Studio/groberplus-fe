@@ -23,33 +23,32 @@ Table of contents
 
 --------------------------------------------- */
 
+@import "mixins";
 
-@import 'mixins';
+@import "theme-options";
 
-@import 'theme-options';
+@import "reset";
 
-@import 'reset';
+@import "header";
 
-@import 'header';
+@import "welcome";
 
-@import 'welcome';
+@import "global";
 
-@import 'global';
+@import "parallax";
 
-@import 'parallax';
+@import "team";
 
-@import 'team';
+@import "blog";
 
-@import 'blog';
+@import "footer";
 
-@import 'footer';
+@import "pages";
 
-@import 'pages';
+@import "faq";
 
-@import 'faq';
+@import "aside";
 
-@import 'aside';
+@import "contact";
 
-@import 'contact';
-
-@import 'preloader';
+@import "preloader";
