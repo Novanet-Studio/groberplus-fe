@@ -1,41 +1,35 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
+
   ssr: false,
   modules: ["@vite-pwa/nuxt", "@nuxt/image", "@nuxtjs/strapi"],
 
+  runtimeConfig: {
+    public: {
+      strapi: {
+        url: process.env.STRAPI_URL || "http://localhost:1337",
+        prefix: "/api",
+        version: "v5",
+      },
+    },
+  },
+
   app: {
     head: {
-      title: {
-        textContent: `GroberPlus`,
-      },
+      title: "GroberPlus",
       meta: [
-        {
-          name: "title",
-          content: "GroberPlus",
-        },
-        {
-          name: "description",
-          content: "GroberPlus",
-        },
-        {
-          name: "name",
-          content: "GroberPlus",
-        },
-        {
-          name: "author",
-          content: "Novanet Studio <info@novanet.studio>",
-        },
+        { name: "title", content: "GroberPlus" },
+        { name: "description", content: "GroberPlus" },
+        { name: "author", content: "Novanet Studio <info@novanet.studio>" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
       ],
       htmlAttrs: {
         lang: "en",
       },
       link: [
-        {
-          rel: "icon",
-          href: "icon.png",
-          type: "image/png",
-        },
+        { rel: "icon", href: "/icon.png", type: "image/png" },
+
         {
           rel: "stylesheet",
           href: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css",
@@ -55,65 +49,51 @@ export default defineNuxtConfig({
         {
           rel: "stylesheet",
           href: "https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css",
-          integrity:
-            "sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==",
-          crossorigin: "anonymous",
-          referrerpolicy: "no-referrer",
         },
       ],
       script: [
-        // JQuery
         {
-          type: "text/javascript",
           src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
-          integrity:
-            "sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==",
-          crossorigin: "anonymous",
-          referrerpolicy: "no-referrer",
+          defer: true,
         },
-        // Bootstrap
         {
-          type: "text/javascript",
           src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.0/umd/popper.min.js",
+          defer: true,
         },
         {
-          type: "text/javascript",
           src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js",
+          defer: true,
+        },
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js",
+          defer: true,
+        },
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js",
+          defer: true,
+        },
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js",
+          defer: true,
+        },
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js",
+          defer: true,
+        },
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/imgix.js/4.0.1/imgix.js",
+          defer: true,
+        },
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.3/owl.carousel.min.js",
+          defer: true,
+        },
+        {
+          src: "https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js",
+          defer: true,
         },
 
-        // Plugins
-        {
-          type: "text/javascript",
-          src: "https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js",
-        },
-        {
-          type: "text/javascript",
-          src: "https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js",
-        },
-        {
-          type: "text/javascript",
-          src: "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js",
-        },
-        {
-          type: "text/javascript",
-          src: "https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js",
-        },
-        {
-          type: "text/javascript",
-          src: "https://cdnjs.cloudflare.com/ajax/libs/imgix.js/4.0.1/imgix.js",
-        },
-        {
-          type: "text/javascript",
-          src: "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.3/owl.carousel.min.js",
-        },
-        {
-          type: "text/javascript",
-          src: "https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js",
-        },
-        {
-          type: "text/javascript",
-          src: "js/custom.js",
-        },
+        { src: "/js/custom.js", defer: true, tagPosition: "bodyClose" },
       ],
     },
   },
@@ -129,10 +109,11 @@ export default defineNuxtConfig({
   },
 
   pwa: {
+    registerType: "autoUpdate",
     manifest: {
       name: "GroberPlus",
       short_name: "GroberPlus",
-      description: "GroberPlus",
+      description: "GroberPlus application",
       lang: "en",
       theme_color: "#ffffff",
       background_color: "#ffffff",
@@ -140,15 +121,33 @@ export default defineNuxtConfig({
       start_url: "/",
       icons: [
         {
-          src: "/icon-192x192.png",
+          src: "pwa-192x192.png",
           sizes: "192x192",
           type: "image/png",
         },
         {
-          src: "/icon.png",
+          src: "pwa-512x512.png",
+          sizes: "512x512",
           type: "image/png",
         },
+        {
+          src: "pwa-512x512.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: "any maskable",
+        },
       ],
+    },
+    workbox: {
+      globPatterns: ["**/*.{js,css,html,png,svg,ico}"],
+      navigateFallback: null,
+    },
+    client: {
+      installPrompt: true,
+    },
+    devOptions: {
+      enabled: true,
+      type: "module",
     },
   },
 
@@ -156,5 +155,5 @@ export default defineNuxtConfig({
     dir: "assets/images",
   },
 
-  compatibilityDate: "2024-09-01",
+  compatibilityDate: "2025-12-20",
 });
