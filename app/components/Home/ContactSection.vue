@@ -1,47 +1,16 @@
 <template>
   <section class="page" id="contact">
-    <!-- ***** Page Top Start ***** -->
-    <!-- <div class="cover" data-image="assets/images/photos/cover.jpg">
-      <div class="cover-top">
-        <div class="container">
-          <div class="row">
-            <div class="offset-lg-3 col-lg-6">
-              <h1>CONTACT</h1>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <ol class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li class="active">Contact</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- ***** Page Top End ***** -->
-
-    <!-- ***** Page Content Start ***** -->
     <div class="page-bottom padding-top-0" style="border: 1px solid #f5f5f5">
-      <!-- ***** Map Container Start ***** -->
       <div class="section map">
         <div class="item">
-          <!-- ***** Google Maps Start ***** -->
-          <div
-            class="map-canvas"
-            data-zoom="12"
-            data-lat="-37.811085"
-            data-lng="144.955631"
-            data-type="roadmap"
-            data-hue="#ffc400"
-            data-title="inox"
-            data-icon-path="assets/images/marker.png"
-          ></div>
-          <!-- ***** Google Maps End ***** -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.130663108226!2d144.95525857834872!3d-37.81040835171613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4a092efd03%3A0xae2253c74400b1!2s239%20A&#39;Beckett%20St%2C%20Melbourne%20VIC%203000%2C%20Australia!5e0!3m2!1ses!2sve!4v1766589305392!5m2!1ses!2sve"
+            style="border: 0; width: 100%; height: 100%"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
-      <!-- ***** Map Container End ***** -->
 
       <div class="container">
         <div class="row">
@@ -103,9 +72,7 @@
                 </p>
               </div>
             </div>
-            <!-- ***** Contact Text End ***** -->
 
-            <!-- ***** Contact Form Start ***** -->
             <div class="col-lg-8 col-md-6 col-sm-12">
               <div class="contact-form">
                 <form name="contact" method="POST" data-netlify="true">
@@ -144,11 +111,9 @@
                 </form>
               </div>
             </div>
-            <!-- ***** Contact Form End ***** -->
           </div>
         </div>
       </div>
     </div>
-    <!-- ***** Page Content End ***** -->
   </section>
 </template>

@@ -1,33 +1,48 @@
 <script setup lang="ts">
-import { useQuery } from "@tanstack/vue-query";
+import { getCategoriesQuery } from "~/schemas/grober-queries";
 import type { Category } from "~/types/app";
 
-const { find } = useStrapi();
+const graphql = useStrapiGraphQL();
 
-const { data: categories, suspense: categoriesSuspense } = useQuery({
-  queryKey: ["products"],
-  queryFn: () =>
-    find<any>("categories", {
-      populate: "*",
-    }),
-  select(data) {
-    return data.data;
+const { data: categories } = await useAsyncData(
+  "products-page-list",
+  async () => {
+    try {
+      const response = await graphql<any>(getCategoriesQuery);
+
+      if (response?.data?.categories) {
+        return response.data.categories as Category[];
+      }
+      return [];
+    } catch (error) {
+      console.error("Error cargando productos:", error);
+      return [];
+    }
   },
-});
+  {
+    default: () => [],
+  }
+);
 
-await categoriesSuspense();
+const heroCoverImage = computed(() => {
+  if (categories.value && categories.value.length > 0) {
+    const firstCategory = categories.value[0];
+
+    if (firstCategory?.image && firstCategory.image.length > 0) {
+      return firstCategory.image[0]!.url;
+    }
+  }
+  return "";
+});
 </script>
 
 <template>
   <section class="page">
-    <!-- ***** Page Top Start ***** -->
     <div
       class="cover"
-      :data-image="
-        getImageUrl(
-          categories?.[0]?.attributes?.image?.data[0]?.attributes?.url
-        )
-      "
+      v-if="heroCoverImage"
+      :data-image="heroCoverImage"
+      :style="{ backgroundImage: `url(${heroCoverImage})` }"
     >
       <div class="cover-top">
         <div class="container">
@@ -47,11 +62,9 @@ await categoriesSuspense();
         </div>
       </div>
     </div>
-    <!-- ***** Page Top End ***** -->
 
     <BackBtn />
 
-    <!-- ***** Page Content Start ***** -->
     <div class="page-bottom" style="padding-top: 2rem">
       <div class="container">
         <div class="row">
@@ -60,33 +73,23 @@ await categoriesSuspense();
               <div class="row">
                 <div
                   v-for="category in categories"
-                  :key="category.attributes.slug"
+                  :key="category.slug"
                   class="col-lg-4 col-md-6 col-sm-12"
                 >
                   <nuxt-link
                     class="project-grid-item"
-                    :to="`/products/${category.attributes.slug}`"
+                    :to="`/products/${category.slug}`"
                   >
                     <div class="img">
                       <img
                         style="width: 100%; height: 100%; object-fit: cover"
-                        v-if="
-                          category?.attributes?.image?.data[0]?.attributes?.url
-                        "
-                        :src="
-                          getImageUrl(
-                            category?.attributes?.image?.data[0]?.attributes
-                              ?.url
-                          )
-                        "
-                        :alt="
-                          category?.attributes?.image?.data[0].attributes
-                            ?.alternativeText || 'image'
-                        "
+                        v-if="category.image && category.image.length > 0"
+                        :src="category.image[0]!.url"
+                        :alt="category.image[0]!.name || category.title"
                       />
                     </div>
                     <div class="text">
-                      <h3>{{ category.attributes.title }}</h3>
+                      <h3>{{ category.title }}</h3>
                     </div>
                   </nuxt-link>
                 </div>
@@ -96,6 +99,5 @@ await categoriesSuspense();
         </div>
       </div>
     </div>
-    <!-- ***** Page Content End ***** -->
   </section>
 </template>
