@@ -5,10 +5,8 @@
         <div class="item">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.130663108226!2d144.95525857834872!3d-37.81040835171613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4a092efd03%3A0xae2253c74400b1!2s239%20A&#39;Beckett%20St%2C%20Melbourne%20VIC%203000%2C%20Australia!5e0!3m2!1ses!2sve!4v1766589305392!5m2!1ses!2sve"
-            style="border: 0; width: 100%; height: 100%"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+            style="border: 0; width: 100%; height: 100%" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
 
@@ -23,8 +21,8 @@
                       <i class="fa fa-location-arrow"></i>
                     </div>
                     <p>
-                      Miami 8900 NW 35 lane suite 140 <br />
-                      Doral Fl 33172
+                      10303 NW 62nd Street <br />
+                      Doral FL 33178
                     </p>
                   </div>
                 </div>
@@ -66,10 +64,6 @@
                   responding to the concerns of several professionals. They had
                   the idea of creating a product line.
                 </p>
-                <p>
-                  Sed blandit tempus purus, sed sodales leo rutrum vel. Nam
-                  vulputate ipsum ac est congue, eget commodo magna lobortis.
-                </p>
               </div>
             </div>
 
@@ -79,27 +73,13 @@
                   <input type="hidden" name="form-name" value="contact" />
                   <div class="row">
                     <div class="col-lg-6 col-md-12 col-sm-12">
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Name, surname"
-                        required
-                      />
+                      <input type="text" name="name" placeholder="Name, surname" required />
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12">
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="E-Mail"
-                        required
-                      />
+                      <input type="email" name="email" placeholder="E-Mail" required />
                     </div>
                     <div class="col-lg-12">
-                      <textarea
-                        name="message"
-                        placeholder="Your message"
-                        required
-                      ></textarea>
+                      <textarea name="message" placeholder="Your message" required></textarea>
                     </div>
                     <div class="col-lg-12">
                       <button class="dark-btn float-right" type="submit">
