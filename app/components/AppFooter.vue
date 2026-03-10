@@ -3,11 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-md-12 col-sm-12">
-          <img
-            src="assets/images/groberplus-simple.svg"
-            class="logo"
-            alt="GroberPlus logo"
-          />
+          <img src="assets/images/groberplus-simple.svg" class="logo" alt="GroberPlus logo" />
           <div class="text">
             GröberPlus 100% <br />
             German Quality
@@ -34,26 +30,21 @@
               <a href="#"><i class="fa fa-angle-right"></i><span>Home</span></a>
             </li>
             <li>
-              <a href="#"
-                ><i class="fa fa-angle-right"></i><span>Company</span></a
-              >
+              <a href="#"><i class="fa fa-angle-right"></i><span>Company</span></a>
             </li>
             <li>
-              <a href="#"
-                ><i class="fa fa-angle-right"></i><span>Products</span></a
-              >
+              <a href="#"><i class="fa fa-angle-right"></i><span>Products</span></a>
             </li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-12">
           <h5>Contact Us</h5>
           <div class="address">
-            <p>Miami 8900 NW 35 lane<br />suite 140 Doral Fl 33172</p>
+            <p>10303 NW 62nd Street<br />Doral FL 33178</p>
             <p>+17863071513 (English)</p>
             <p>+17866201586 (Spanish)</p>
             <p>
-              <span>E-Mail: </span
-              ><a href="mailto:eurogrober@gmail.com">eurogrober@gmail.com</a>
+              <span>E-Mail: </span><a href="mailto:eurogrober@gmail.com">eurogrober@gmail.com</a>
             </p>
           </div>
         </div>
