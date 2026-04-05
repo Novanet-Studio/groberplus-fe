@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import MarkdownIt from "markdown-it";
 import {
   getCategoryBySlugQuery,
   getProductBySlugQuery,
 } from "~/schemas/grober-queries";
 import type { Category, Product } from "~/types/app";
+import { jsonld } from '~/assets/data/jsonld';
+import { useJsonLd } from '~/composables/useJsonLd';
 
 const route = useRoute();
 const graphql = useStrapiGraphQL();
-const markdown = new MarkdownIt();
 
 const { data: category } = await useAsyncData(
   `category-${route.params.slug}`,
@@ -48,6 +48,17 @@ const coverImage = computed(() => {
   return "";
 });
 
+if (product.value && category.value) {
+  useJsonLd(jsonld.product({ ...product.value, category: category.value }));
+
+  useSeoMeta({
+    title: `${product.value.title} - GröberPlus`,
+    description: product.value.description?.substring(0, 160) || "GröberPlus product",
+    ogTitle: `${product.value.title} - GröberPlus`,
+    ogImage: coverImage.value || undefined,
+  });
+}
+
 function convertFirstRowToTh(html: string) {
   if (!html) return "";
   return html.replace(
@@ -60,11 +71,7 @@ function convertFirstRowToTh(html: string) {
 
 <template>
   <section class="page" v-if="product && category">
-    <div
-      class="cover"
-      :data-image="coverImage"
-      :style="{ backgroundImage: `url(${coverImage})` }"
-    >
+    <div class="cover" :data-image="coverImage" :style="{ backgroundImage: `url(${coverImage})` }">
       <div class="cover-top">
         <div class="container">
           <div class="row">
@@ -75,7 +82,9 @@ function convertFirstRowToTh(html: string) {
           <div class="row">
             <div class="col-lg-12">
               <ol class="breadcrumb">
-                <li><NuxtLink to="/">Home</NuxtLink></li>
+                <li>
+                  <NuxtLink to="/">Home</NuxtLink>
+                </li>
                 <li>
                   <NuxtLink :to="`/products/${category.slug}`">
                     {{ category.title }}
@@ -101,12 +110,8 @@ function convertFirstRowToTh(html: string) {
               <div class="row margin-bottom-90">
                 <div class="col-lg-4 col-md-12 col-sm-12 align-self-center">
                   <div class="page-single-img">
-                    <img
-                      v-if="product.images && product.images.length > 0"
-                      :src="product.images[0]!.url"
-                      class="img-fluid float-left"
-                      :alt="product.title"
-                    />
+                    <img v-if="product.images && product.images.length > 0" :src="product.images[0]!.url"
+                      class="img-fluid float-left" :alt="product.title" />
                   </div>
                 </div>
 
@@ -114,38 +119,19 @@ function convertFirstRowToTh(html: string) {
                   <div class="page-single-text">
                     <h5 class="title">{{ product.title }}</h5>
 
-                    <div
-                      class="prod-cont-tab"
-                      v-html="
-                        product.description?.includes('<')
-                          ? convertFirstRowToTh(product.description)
-                          : markdown.render(product.description || '')
-                      "
-                    ></div>
+                    <div class="prod-cont-tab" v-html="product.description?.includes('<')
+                        ? convertFirstRowToTh(product.description)
+                        : markdown.render(product.description || '')
+                      "></div>
 
-                    <img
-                      v-if="product.hasSlowMotion"
-                      src="/slow-motion.png"
-                      alt="Slow motion icon"
-                      style="width: 4rem; height: 4rem"
-                    />
+                    <img v-if="product.hasSlowMotion" src="/slow-motion.png" alt="Slow motion icon"
+                      style="width: 4rem; height: 4rem" />
 
                     <div class="blueprint-grid">
-                      <div
-                        v-for="blueprint in product.blueprints"
-                        class="col-lg-3 col-md-6 col-sm-6 col-6 blueprint-item"
-                        :key="blueprint.id"
-                      >
-                        <a
-                          :href="blueprint.url"
-                          class="page-gallery"
-                          target="_blank"
-                        >
-                          <img
-                            :src="blueprint.url"
-                            :alt="blueprint.name"
-                            class="blueprint-image"
-                          />
+                      <div v-for="blueprint in product.blueprints"
+                        class="col-lg-3 col-md-6 col-sm-6 col-6 blueprint-item" :key="blueprint.id">
+                        <a :href="blueprint.url" class="page-gallery" target="_blank">
+                          <img :src="blueprint.url" :alt="blueprint.name" class="blueprint-image" />
                         </a>
                       </div>
                     </div>
@@ -154,21 +140,9 @@ function convertFirstRowToTh(html: string) {
               </div>
 
               <div class="row page-gallery-wrapper">
-                <div
-                  v-for="galleryImg in product.images"
-                  class="col-lg-3 col-md-6 col-sm-6 col-6"
-                  :key="galleryImg.id"
-                >
-                  <a
-                    :href="galleryImg.url"
-                    class="page-gallery"
-                    target="_blank"
-                  >
-                    <img
-                      :src="galleryImg.url"
-                      :alt="galleryImg.name"
-                      class="gallery-image"
-                    />
+                <div v-for="galleryImg in product.images" class="col-lg-3 col-md-6 col-sm-6 col-6" :key="galleryImg.id">
+                  <a :href="galleryImg.url" class="page-gallery" target="_blank">
+                    <img :src="galleryImg.url" :alt="galleryImg.name" class="gallery-image" />
                   </a>
                 </div>
               </div>
@@ -283,6 +257,7 @@ function convertFirstRowToTh(html: string) {
 }
 
 @media only screen and (min-width: 320px) {
+
   .prod-cont-tab ul:nth-child(1),
   .prod-cont-tab ul:nth-child(2),
   .prod-cont-tab ul:nth-child(3),
@@ -297,6 +272,7 @@ function convertFirstRowToTh(html: string) {
 }
 
 @media only screen and (min-width: 768px) {
+
   .prod-cont-tab ul:nth-child(1),
   .prod-cont-tab ul:nth-child(2),
   .prod-cont-tab ul:nth-child(3),

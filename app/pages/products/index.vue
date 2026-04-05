@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { getCategoriesQuery } from "~/schemas/grober-queries";
 import type { Category } from "~/types/app";
+import { metadata } from '~/assets/data/metadata';
+import { jsonld } from '~/assets/data/jsonld';
+import { useJsonLd } from '~/composables/useJsonLd';
+
+useSeoMeta(metadata.products);
+useJsonLd(jsonld.products);
 
 const graphql = useStrapiGraphQL();
 

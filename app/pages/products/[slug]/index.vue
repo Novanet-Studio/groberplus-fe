@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { getCategoryWithProductsQuery } from "~/schemas/grober-queries";
 import type { Category } from "~/types/app";
+import { jsonld } from '~/assets/data/jsonld';
+import { useJsonLd } from '~/composables/useJsonLd';
 
 const route = useRoute();
 const graphql = useStrapiGraphQL();
@@ -29,6 +31,10 @@ const coverImageUrl = computed(() => {
 });
 
 const isLoading = computed(() => status.value === "pending");
+
+if (category.value) {
+  useJsonLd(jsonld.productCategory(category.value));
+}
 </script>
 
 <template>
