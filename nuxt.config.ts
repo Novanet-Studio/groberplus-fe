@@ -3,15 +3,12 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
 
   ssr: false,
-  modules: ["@vite-pwa/nuxt", "@nuxt/image", "@nuxtjs/strapi"],
+  modules: ["@vite-pwa/nuxt", "@nuxt/image", "@vueuse/nuxt"],
 
   runtimeConfig: {
     public: {
-      strapi: {
-        url: process.env.STRAPI_URL || "http://localhost:1337",
-        prefix: "/api",
-        version: "v5",
-      },
+      kairosApiUrl: process.env.KAIROS_API_URL,
+      kairosApiKey: process.env.KAIROS_API_KEY,
     },
   },
 
@@ -38,24 +35,8 @@ export default defineNuxtConfig({
           rel: "stylesheet",
           href: "https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css",
         },
-        {
-          rel: "stylesheet",
-          href: "https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css",
-        },
       ],
       script: [
-        {
-          src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
-          defer: true,
-        },
         {
           src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.0/umd/popper.min.js",
           defer: true,
@@ -64,41 +45,16 @@ export default defineNuxtConfig({
           src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js",
           defer: true,
         },
-        {
-          src: "https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js",
-          defer: true,
-        },
-        {
-          src: "https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js",
-          defer: true,
-        },
-        {
-          src: "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js",
-          defer: true,
-        },
-        {
-          src: "https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js",
-          defer: true,
-        },
-        {
-          src: "https://cdnjs.cloudflare.com/ajax/libs/imgix.js/4.0.1/imgix.js",
-          defer: true,
-        },
-        {
-          src: "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.3/owl.carousel.min.js",
-          defer: true,
-        },
-        {
-          src: "https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js",
-          defer: true,
-        },
-
-        { src: "/js/custom.js", defer: true, tagPosition: "bodyClose" },
       ],
     },
   },
 
-  css: ["~/assets/scss/style.scss"],
+  css: [
+    "~/assets/scss/style.scss",
+    "owl.carousel/dist/assets/owl.carousel.min.css",
+    "owl.carousel/dist/assets/owl.theme.default.min.css",
+    "magnific-popup/dist/magnific-popup.css",
+  ],
 
   typescript: {
     tsConfig: {

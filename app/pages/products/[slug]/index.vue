@@ -1,19 +1,14 @@
 <script setup lang="ts">
-import { getCategoryWithProductsQuery } from "~/schemas/grober-queries";
-import type { Category } from "~/types/app";
+import { getCategoryWithProducts } from "~/schemas/grober-queries";
 
 const route = useRoute();
-const graphql = useStrapiGraphQL();
+const slug = route.params.slug as string;
 
-const { data: category, status } = await useAsyncData(
-  `category-view-${route.params.slug}`,
+const { data: result, status } = await useAsyncData(
+  `category-view-${slug}`,
   async () => {
     try {
-      const response = await graphql<any>(getCategoryWithProductsQuery, {
-        slug: route.params.slug,
-      });
-
-      return (response?.data?.categories?.[0] as Category) || null;
+      return await getCategoryWithProducts(slug);
     } catch (error) {
       console.error("Error cargando la categoría:", error);
       return null;
@@ -21,9 +16,12 @@ const { data: category, status } = await useAsyncData(
   }
 );
 
+const category = computed(() => result.value?.category ?? null);
+const products = computed(() => result.value?.products ?? []);
+
 const coverImageUrl = computed(() => {
   if (category.value?.image && category.value.image.length > 0) {
-    return category.value.image[0]!.url;
+    return category.value.image[0]!;
   }
   return "";
 });
@@ -69,7 +67,7 @@ const isLoading = computed(() => status.value === "pending");
         <div v-else class="row project-grid">
           <div
             class="col-lg-4 col-md-6 col-sm-12"
-            v-for="product in category.products"
+            v-for="product in products"
             :key="product.slug"
           >
             <NuxtLink
@@ -79,8 +77,8 @@ const isLoading = computed(() => status.value === "pending");
               <div class="img">
                 <img
                   v-if="product.images && product.images.length > 0"
-                  :src="product.images[0]!.url"
-                  :alt="product.images[0]!.name"
+                  :src="product.images[0]!"
+                  :alt="product.title"
                   style="width: 100%; height: 100%; object-fit: cover"
                 />
               </div>

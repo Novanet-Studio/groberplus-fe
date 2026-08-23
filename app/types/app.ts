@@ -1,26 +1,29 @@
-export interface StrapiImage {
-  id: number;
-  documentId: string;
-  url: string;
-  name: string;
+export interface CategoryRelation {
+  id: string;
+  data: {
+    slug: string;
+    title: string;
+    description?: string;
+    image: string[];
+  };
 }
 
 export interface Category {
-  documentId: string;
-  title: string;
   slug: string;
+  title: string;
   description?: string;
-  image: StrapiImage[];
+  image: string[];
   products?: Product[];
 }
 
 export interface Product {
-  documentId: string;
+  slug: string;
   title: string;
   description: string;
   hasSlowMotion: boolean;
-  slug: string;
-  images: StrapiImage[];
-  blueprints: StrapiImage[];
-  category?: Category;
+  images: string[];
+  blueprints: string[];
+  relations?: {
+    category?: CategoryRelation[];
+  };
 }

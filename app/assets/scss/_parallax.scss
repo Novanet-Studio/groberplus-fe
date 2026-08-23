@@ -10,6 +10,9 @@ parallax
 		height: 400px;
 		position: relative;
 		overflow: hidden;
+		background-size: cover;
+		background-position: center center;
+		background-attachment: fixed;
 
 		&:after {
 			content: '';
@@ -84,6 +87,9 @@ parallax
 	min-height: 337px;
 	overflow: hidden;
 	position: relative;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
 
 	&:before {
 		content: '';

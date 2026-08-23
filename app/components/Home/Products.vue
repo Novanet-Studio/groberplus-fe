@@ -1,20 +1,11 @@
 <script setup lang="ts">
-import { getCategoriesQuery } from "~/schemas/grober-queries";
-import type { Category } from "~/types/app";
-
-const graphql = useStrapiGraphQL();
+import { getCategories } from "~/schemas/grober-queries";
 
 const { data: categories } = await useAsyncData(
   "home-categories-list",
   async () => {
     try {
-      const response = await graphql<any>(getCategoriesQuery);
-
-      if (response?.data?.categories) {
-        return response.data.categories as Category[];
-      }
-
-      return [];
+      return await getCategories();
     } catch (error) {
       console.error("Error cargando categorías:", error);
       return [];
@@ -39,8 +30,8 @@ const { data: categories } = await useAsyncData(
             <div class="img">
               <img
                 v-if="category.image && category.image.length > 0"
-                :src="category.image[0]!.url"
-                :alt="category.image[0]!.name"
+                :src="category.image[0]!"
+                :alt="category.title"
                 style="width: 100%; height: 100%; object-fit: cover"
               />
             </div>

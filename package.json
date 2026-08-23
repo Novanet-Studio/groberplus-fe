@@ -14,8 +14,6 @@
     "@types/markdown-it": "^14.1.2",
     "@types/owl.carousel": "^2.3.6",
     "@vite-pwa/nuxt": "^1.1.1",
-    "@vueuse/core": "^14.2.1",
-    "@vueuse/nuxt": "^14.2.1",
     "nuxt": "^4.4.2",
     "sass": "^1.98.0",
     "sass-loader": "^16.0.7",
@@ -24,9 +22,13 @@
   },
   "dependencies": {
     "@nuxt/image": "^2.0.0",
-    "@nuxtjs/strapi": "^2.1.1",
     "@tanstack/vue-query": "^5.96.0",
+    "@vueuse/core": "^14.2.1",
+    "@vueuse/nuxt": "^14.2.1",
+    "jquery": "^3.7.1",
+    "magnific-popup": "^1.1.0",
     "markdown-it": "^14.1.1",
+    "owl.carousel": "^2.3.4",
     "qs": "^6.15.0"
   }
 }
