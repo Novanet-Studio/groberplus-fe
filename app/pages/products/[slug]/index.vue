@@ -13,7 +13,7 @@ const { data: result, status } = await useAsyncData(
       console.error("Error cargando la categoría:", error);
       return null;
     }
-  }
+  },
 );
 
 const category = computed(() => result.value?.category ?? null);

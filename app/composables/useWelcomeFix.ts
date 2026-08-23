@@ -31,7 +31,7 @@ export default function welcomeFix() {
         {
           opacity: 1,
         },
-        2000
+        2000,
       );
     }
   }

@@ -5,217 +5,217 @@ contact
 */
 
 .contact {
-	position: relative;
-	margin-top: -90px;
-	margin-bottom: 50px;
+  position: relative;
+  margin-top: -90px;
+  margin-bottom: 50px;
 
-	.contact-item {
-		background: #fff;
-		box-shadow: 0 2px 48px 0 rgba(0,0,0,0.08);
-		margin-bottom: 30px;
-		text-align: center;
-		padding: 20px;
-		padding-top: 30px;
-		position: relative;
-		@include font($normal, 14px);
-		color: $textDark;
+  .contact-item {
+    background: #fff;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 20px;
+    padding-top: 30px;
+    position: relative;
+    @include font($normal, 14px);
+    color: $textDark;
 
-		.icon {
-			width: 46px;
-			height: 46px;
-			left: 0px;
-			right: 0px;
-			margin: auto;
-			background: #F5F5F5;
-			color: $headingLight;
-			margin-bottom: 20px;
+    .icon {
+      width: 46px;
+      height: 46px;
+      left: 0px;
+      right: 0px;
+      margin: auto;
+      background: #f5f5f5;
+      color: $headingLight;
+      margin-bottom: 20px;
 
-			&.location {
-				background: $color3;
-			}
+      &.location {
+        background: $color3;
+      }
 
-			&.phone {
-				background: $primaryColor;
-			}
+      &.phone {
+        background: $primaryColor;
+      }
 
-			&.mail {
-				background: $color2;
-			}
+      &.mail {
+        background: $color2;
+      }
 
-			i {
-				display: block;
-				width: 46px;
-				height: 46px;
-				line-height: 46px;
-			}
-		}
+      i {
+        display: block;
+        width: 46px;
+        height: 46px;
+        line-height: 46px;
+      }
+    }
 
-		p {
-			margin-bottom: 0px !important;
-			font-size: 14px;
-		}
+    p {
+      margin-bottom: 0px !important;
+      font-size: 14px;
+    }
 
-		a {
-			display: block;
-			color: $textDark;
-		}
-	}
+    a {
+      display: block;
+      color: $textDark;
+    }
+  }
 
-	.map-wrapper {
-		position: relative;
-		width: 100%;
-		height: 500px;
-		@include radius(5px);
-		overflow: hidden;
-		box-shadow: 0 2px 48px 0 rgba(0,0,0,0.06);
-		z-index: 1;
+  .map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    @include radius(5px);
+    overflow: hidden;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+    z-index: 1;
 
-		.map-canvas {
-			width: 100%;
-			height: 100%;
-		}
-	}
+    .map-canvas {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 .map {
-	overflow: hidden;
-	padding: 0px;
+  overflow: hidden;
+  padding: 0px;
 
-	.top {
-		margin-bottom: -70px;
-	}
+  .top {
+    margin-bottom: -70px;
+  }
 
-	.bottom {
-		float: left;
-		margin-top: -60px;
-	}
+  .bottom {
+    float: left;
+    margin-top: -60px;
+  }
 
-	.item {
-		width: 100%;
-		height: 400px;
-		float: left;
-		position: relative;
+  .item {
+    width: 100%;
+    height: 400px;
+    float: left;
+    position: relative;
 
-		.map-canvas {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-		}
-	}
+    .map-canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
 
-	.content {
-		position: absolute;
-		width: 60%;
-		left: 0px;
-		right: 0px;
-		margin: auto;
-		z-index: 3;
-		text-align: center;
-		top: 30%;
-		transform: perspective(1px) translateY(0%);
+  .content {
+    position: absolute;
+    width: 60%;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    z-index: 3;
+    text-align: center;
+    top: 30%;
+    transform: perspective(1px) translateY(0%);
 
-		h6 {
-			@include font($normal, 13px);
-			letter-spacing: 1px;
-			color: #fff;
-			margin-bottom: 20px;
-		}
+    h6 {
+      @include font($normal, 13px);
+      letter-spacing: 1px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
 
-		p {
-			font-weight: 700 !important;
-			font-size: 18px !important;
-			line-height: 30px !important;
-			letter-spacing: 1.12px !important;
-			color: #fff;
-			margin-bottom: 30px !important;
-		}
+    p {
+      font-weight: 700 !important;
+      font-size: 18px !important;
+      line-height: 30px !important;
+      letter-spacing: 1.12px !important;
+      color: #fff;
+      margin-bottom: 30px !important;
+    }
 
-		.btn-primary-line {
-			margin-bottom: 0px;
-			height: 36px;
-			line-height: 36px;
-			text-transform: capitalize;
-		}
-	}
+    .btn-primary-line {
+      margin-bottom: 0px;
+      height: 36px;
+      line-height: 36px;
+      text-transform: capitalize;
+    }
+  }
 }
-
 
 .contact-bottom {
-	margin-top: 20px;
-	margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 
-	.contact-text {
-		@include font($normal, 14px);
-		color: $textDark;
-		letter-spacing: 0.6px;
-		line-height: 26px;
+  .contact-text {
+    @include font($normal, 14px);
+    color: $textDark;
+    letter-spacing: 0.6px;
+    line-height: 26px;
 
-		p {
-			margin-bottom: 28px;
-			font-size: 14px !important;
-			letter-spacing: 0.7px;
-		}
-	}
+    p {
+      margin-bottom: 28px;
+      font-size: 14px !important;
+      letter-spacing: 0.7px;
+    }
+  }
 
-	.contact-form {
-		input, textarea {
-			border: 1px solid #eee;
-			width: 100%;
-			height: 50px;
-			outline: none;
-			padding-left: 20px;
-			padding-right: 20px;
-			@include transition(.3s);
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			margin-bottom: 30px;
-			color: #9BADBD;
-			font-size: 14px;
+  .contact-form {
+    input,
+    textarea {
+      border: 1px solid #eee;
+      width: 100%;
+      height: 50px;
+      outline: none;
+      padding-left: 20px;
+      padding-right: 20px;
+      @include transition(0.3s);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin-bottom: 30px;
+      color: #9badbd;
+      font-size: 14px;
 
-			&:focus {
-				border: 1px solid $primaryColor;
-				padding-left: 30px;
-			}
-		}
+      &:focus {
+        border: 1px solid $primaryColor;
+        padding-left: 30px;
+      }
+    }
 
-		textarea {
-			height: 150px;
-			resize: none;
-			padding: 20px;
-		}
+    textarea {
+      height: 150px;
+      resize: none;
+      padding: 20px;
+    }
 
-		.dark-btn {
-			.show-btn {
-				background: #f5f5f5;
-			}
-		}
-	}
+    .dark-btn {
+      .show-btn {
+        background: #f5f5f5;
+      }
+    }
+  }
 }
 
-@media (max-width : 991px) {
-	.contact {
-		overflow: initial !important;
-		margin-bottom: 10px !important;
+@media (max-width: 991px) {
+  .contact {
+    overflow: initial !important;
+    margin-bottom: 10px !important;
 
-		.map-wrapper {
-			width: 100% !important;
-			height: 300px;
-			margin-bottom: 30px;
-		}
+    .map-wrapper {
+      width: 100% !important;
+      height: 300px;
+      margin-bottom: 30px;
+    }
 
-		.contact-info {
-			position: relative !important;
-			width: 100% !important;
-			margin-top: 10px !important;
-			margin-left: 0px !important;
-			transform: perspective(1px) translateY(-0%) !important;
-			box-shadow: 0 2px 48px 0 rgba(0,0,0,0.06);
-		}
-	}
+    .contact-info {
+      position: relative !important;
+      width: 100% !important;
+      margin-top: 10px !important;
+      margin-left: 0px !important;
+      transform: perspective(1px) translateY(-0%) !important;
+      box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+    }
+  }
 
-	.contact-bottom {
-		margin-top: 30px;
-		padding-top: 30px;
-	}
+  .contact-bottom {
+    margin-top: 30px;
+    padding-top: 30px;
+  }
 }

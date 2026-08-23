@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import MarkdownIt from "markdown-it";
-import {
-  getCategoryBySlug,
-  getProductBySlug,
-} from "~/schemas/grober-queries";
+import { getCategoryBySlug, getProductBySlug } from "~/schemas/grober-queries";
 
 const route = useRoute();
 const markdown = new MarkdownIt();
@@ -17,7 +14,7 @@ const { data: category } = await useAsyncData(
       console.error(e);
       return null;
     }
-  }
+  },
 );
 
 const { data: product } = await useAsyncData(
@@ -29,7 +26,7 @@ const { data: product } = await useAsyncData(
       console.error(e);
       return null;
     }
-  }
+  },
 );
 
 const coverImage = computed(() => {
@@ -44,7 +41,7 @@ function convertFirstRowToTh(html: string) {
   return html.replace(
     /<tr>(.*?)<\/tr>/,
     (match, p1) =>
-      `<tr>${p1.replace(/<td>/g, "<th>").replace(/<\/td>/g, "</th>")}</tr>`
+      `<tr>${p1.replace(/<td>/g, "<th>").replace(/<\/td>/g, "</th>")}</tr>`,
   );
 }
 
@@ -158,11 +155,7 @@ onMounted(() => {
                   class="col-lg-3 col-md-6 col-sm-6 col-6"
                   :key="galleryImg"
                 >
-                  <a
-                    :href="galleryImg"
-                    class="page-gallery"
-                    target="_blank"
-                  >
+                  <a :href="galleryImg" class="page-gallery" target="_blank">
                     <img
                       :src="galleryImg"
                       :alt="product.title"

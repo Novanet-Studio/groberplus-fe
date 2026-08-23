@@ -17,7 +17,7 @@ export default function usePageLoadingAnimation() {
         setTimeout(function () {
           $(".preloader-wrapper").css("visibility", "hidden").fadeOut();
         }, 300);
-      }
+      },
     );
   }
 

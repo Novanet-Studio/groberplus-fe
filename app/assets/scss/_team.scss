@@ -5,111 +5,111 @@ our team
 */
 
 .person-item {
-	margin-bottom: 45px;
-	float: left;
-	width: 100%;
+  margin-bottom: 45px;
+  float: left;
+  width: 100%;
 
-	.img {
-		position: relative;
-		z-index: 1;
-		margin-top: 14px;
-		float: left;
-		box-shadow: 0 2px 48px 0 rgba(0,0,0,0.13);
-		@include transition(.3s);
-		width: 291px;
-		height: 232px;
+  .img {
+    position: relative;
+    z-index: 1;
+    margin-top: 14px;
+    float: left;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.13);
+    @include transition(0.3s);
+    width: 291px;
+    height: 232px;
 
-		img {
-			max-width: 291px;
-			max-height: 232px;
-		}
-	}
+    img {
+      max-width: 291px;
+      max-height: 232px;
+    }
+  }
 
-	.content {
-		position: absolute;
-		z-index: 1;
-		background: #fff;
-		box-shadow: 0 2px 48px 0 rgba(0,0,0,0.13);
-		right: -100px;
-		top: 18%;
-		width: 80%;
-		height: 145px;
-		padding-left: 50px;
-		display: flex;
-		align-items: center;
-		overflow: hidden;
+  .content {
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.13);
+    right: -100px;
+    top: 18%;
+    width: 80%;
+    height: 145px;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 
-		.text {
-			width: 100%;
-			position: relative;
-			min-height: 85px;
+    .text {
+      width: 100%;
+      position: relative;
+      min-height: 85px;
 
-			&:before {
-				content: '';
-				position: absolute;
-				width: 5px;
-				height: 85px;
-				right: 0px;
-				background: #DDDDDD;
-				@include transition(.3s);
-			}
+      &:before {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 85px;
+        right: 0px;
+        background: #dddddd;
+        @include transition(0.3s);
+      }
 
-			.title {
-				display: block;
-				width: 100%;
-				@include font($normal, 16px);
-				letter-spacing: 0.69px;
-				color: $primaryColor;
-				margin-bottom: 5px;
-				margin-top: 3px;
-			}
+      .title {
+        display: block;
+        width: 100%;
+        @include font($normal, 16px);
+        letter-spacing: 0.69px;
+        color: $primaryColor;
+        margin-bottom: 5px;
+        margin-top: 3px;
+      }
 
-			span {
-				display: block;
-				@include font($normal, 12px);
-				color: $textDark;
-				letter-spacing: 0.52px;
-				margin-bottom: 10px;
-			}
+      span {
+        display: block;
+        @include font($normal, 12px);
+        color: $textDark;
+        letter-spacing: 0.52px;
+        margin-bottom: 10px;
+      }
 
-			ul {
-				overflow-x: hidden;
+      ul {
+        overflow-x: hidden;
 
-				li {
-					float: left;
+        li {
+          float: left;
 
-					a {
-						display: inline-block;
-						font-size: 14px;
-						color: #6F8BA4;
-						margin-right: 15px;
-					}
-				}
-			}
-		}
-	}
+          a {
+            display: inline-block;
+            font-size: 14px;
+            color: #6f8ba4;
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+  }
 
-	&.active {
-		.content {
-			.text {
-				&:before {
-					background: $primaryColor;
-				}
-			}
-		}
-	}
+  &.active {
+    .content {
+      .text {
+        &:before {
+          background: $primaryColor;
+        }
+      }
+    }
+  }
 
-	&:hover {
-		.img {
-			margin-top: -15px;
-		}
+  &:hover {
+    .img {
+      margin-top: -15px;
+    }
 
-		.content {
-			.text {
-				&:before {
-					background: $primaryColor;
-				}
-			}
-		}
-	}
+    .content {
+      .text {
+        &:before {
+          background: $primaryColor;
+        }
+      }
+    }
+  }
 }

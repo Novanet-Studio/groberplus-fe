@@ -7,7 +7,7 @@ export default function useKairos() {
       {
         headers: { "x-api-key": config.public.kairosApiKey },
         params,
-      }
+      },
     );
     return data;
   }
@@ -15,7 +15,7 @@ export default function useKairos() {
   async function getOne<T>(
     collection: string,
     slug: string,
-    params?: Record<string, string>
+    params?: Record<string, string>,
   ): Promise<T | null> {
     try {
       const { data } = await $fetch<{ data: T }>(
@@ -23,7 +23,7 @@ export default function useKairos() {
         {
           headers: { "x-api-key": config.public.kairosApiKey },
           params,
-        }
+        },
       );
       return data;
     } catch {

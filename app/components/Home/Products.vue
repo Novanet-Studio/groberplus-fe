@@ -13,7 +13,7 @@ const { data: categories } = await useAsyncData(
   },
   {
     default: () => [],
-  }
+  },
 );
 </script>
 
