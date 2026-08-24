@@ -3,7 +3,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-md-12 col-sm-12">
-          <img src="assets/images/groberplus-simple.svg" class="logo" alt="GroberPlus logo" />
+          <img
+            src="assets/images/groberplus-simple.svg"
+            class="logo"
+            alt="GroberPlus logo"
+          />
           <div class="text">
             GröberPlus 100% <br />
             German Quality
@@ -30,10 +34,14 @@
               <a href="#"><i class="fa fa-angle-right"></i><span>Home</span></a>
             </li>
             <li>
-              <a href="#"><i class="fa fa-angle-right"></i><span>Company</span></a>
+              <a href="#"
+                ><i class="fa fa-angle-right"></i><span>Company</span></a
+              >
             </li>
             <li>
-              <a href="#"><i class="fa fa-angle-right"></i><span>Products</span></a>
+              <a href="#"
+                ><i class="fa fa-angle-right"></i><span>Products</span></a
+              >
             </li>
           </ul>
         </div>
@@ -44,7 +52,8 @@
             <p>+17863071513 (English)</p>
             <p>+17866201586 (Spanish)</p>
             <p>
-              <span>E-Mail: </span><a href="mailto:eurogrober@gmail.com">eurogrober@gmail.com</a>
+              <span>E-Mail: </span
+              ><a href="mailto:eurogrober@gmail.com">eurogrober@gmail.com</a>
             </p>
           </div>
         </div>

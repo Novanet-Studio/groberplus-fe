@@ -36,10 +36,64 @@ body {
 reset
 --------------------------------------------- 
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div pre,
-a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
-s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
-figure, header, nav, section, article, aside, footer, figcaption {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+div pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+figure,
+header,
+nav,
+section,
+article,
+aside,
+footer,
+figcaption {
   margin: 0;
   padding: 0;
   border: 0;
@@ -67,13 +121,20 @@ html[xmlns] .clearfix {
   height: 1%;
 }
 
-ul, li {
+ul,
+li {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-header, nav, section, article, aside, footer, hgroup {
+header,
+nav,
+section,
+article,
+aside,
+footer,
+hgroup {
   display: block;
 }
 
@@ -81,7 +142,8 @@ header, nav, section, article, aside, footer, hgroup {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   background-color: #fff;
@@ -95,7 +157,12 @@ a {
   text-decoration: none !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -153,7 +220,7 @@ header
   display: block;
   font-weight: 400;
   font-size: 14px;
-  color: #1F2128;
+  color: #1f2128;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -164,18 +231,18 @@ header
   letter-spacing: 1.58px;
 }
 .header-area .main-nav .nav li a:hover {
-  color: #1F2128;
+  color: #1f2128;
 }
 .header-area .main-nav .nav li a.contact-btn {
   padding-left: 25px;
   padding-right: 25px;
-  border: 1px solid #1F2128;
+  border: 1px solid #1f2128;
   height: 35px;
   margin-top: 2px;
   line-height: 34px;
   letter-spacing: 0.5px;
   background: none;
-  color: #1F2128;
+  color: #1f2128;
   position: relative;
   overflow: hidden;
   -webkit-transition: all 0.3s ease 0s;
@@ -184,7 +251,7 @@ header
   transition: all 0.3s ease 0s;
 }
 .header-area .main-nav .nav li a.contact-btn:hover {
-  background: #1F2128;
+  background: #1f2128;
   color: #fff;
 }
 .header-area .main-nav .nav li.submenu {
@@ -195,7 +262,7 @@ header
   font-family: FontAwesome;
   content: "\f107";
   font-size: 12px;
-  color: #1F2128;
+  color: #1f2128;
   position: absolute;
   right: 18px;
   top: 12px;
@@ -210,7 +277,10 @@ header
   transform: translateY(-2em);
   visibility: hidden;
   z-index: -1;
-  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+  transition:
+    all 0.3s ease-in-out 0s,
+    visibility 0s linear 0.3s,
+    z-index 0s linear 0.01s;
 }
 .header-area .main-nav .nav li.submenu ul li {
   margin-left: 0px;
@@ -220,7 +290,7 @@ header
 .header-area .main-nav .nav li.submenu ul li a {
   display: block;
   background: #fff;
-  color: #1F2128;
+  color: #1f2128;
   padding-left: 20px;
   height: 40px;
   line-height: 40px;
@@ -243,7 +313,7 @@ header
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  background: #1F2128;
+  background: #1f2128;
 }
 .header-area .main-nav .nav li.submenu ul li a:hover {
   background: #fafafa;
@@ -278,7 +348,7 @@ header
   -o-transition: all 0.4s;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  background-color: #1F2128;
+  background-color: #1f2128;
   display: block;
   position: absolute;
   width: 30px;
@@ -291,7 +361,7 @@ header
   -o-transition: all 0.4s;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  background-color: #1F2128;
+  background-color: #1f2128;
   display: block;
   position: absolute;
   width: 30px;
@@ -321,7 +391,9 @@ header
   transform-origin: 33% 0;
   top: 10px;
 }
-.header-area .main-nav .menu-trigger.active span, .header-area .main-nav .menu-trigger.active span:before, .header-area .main-nav .menu-trigger.active span:after {
+.header-area .main-nav .menu-trigger.active span,
+.header-area .main-nav .menu-trigger.active span:before,
+.header-area .main-nav .menu-trigger.active span:after {
   background-color: transparent;
   width: 100%;
 }
@@ -330,14 +402,14 @@ header
   -ms-transform: translateY(6px) translateX(1px) rotate(45deg);
   -webkit-transform: translateY(6px) translateX(1px) rotate(45deg);
   transform: translateY(6px) translateX(1px) rotate(45deg);
-  background-color: #1F2128;
+  background-color: #1f2128;
 }
 .header-area .main-nav .menu-trigger.active span:after {
   -moz-transform: translateY(-6px) translateX(1px) rotate(-45deg);
   -ms-transform: translateY(-6px) translateX(1px) rotate(-45deg);
   -webkit-transform: translateY(-6px) translateX(1px) rotate(-45deg);
   transform: translateY(-6px) translateX(1px) rotate(-45deg);
-  background-color: #1F2128;
+  background-color: #1f2128;
 }
 
 @media (max-width: 1200px) {
@@ -396,7 +468,7 @@ header
     padding-left: 30px !important;
     border: none !important;
     background: #fff !important;
-    color: #1F2128 !important;
+    color: #1f2128 !important;
   }
   .header-area .main-nav .nav li a:hover {
     background: #f5f5f5 !important;
@@ -429,12 +501,13 @@ header
     height: auto !important;
   }
   .header-area .main-nav .nav li.submenu:after {
-    color: #1F2128;
+    color: #1f2128;
     right: 25px;
     font-size: 14px;
     top: 15px;
   }
-  .header-area .main-nav .nav li.submenu:hover ul, .header-area .main-nav .nav li.submenu:focus ul {
+  .header-area .main-nav .nav li.submenu:hover ul,
+  .header-area .main-nav .nav li.submenu:focus ul {
     height: 0px;
   }
 }
@@ -465,7 +538,7 @@ welcome
   line-height: 48px;
   letter-spacing: 1.3px;
   margin-bottom: 35px;
-  color: #1F2128;
+  color: #1f2128;
 }
 .welcome .welcome-content .welcome-text p {
   font-weight: 400;
@@ -521,14 +594,16 @@ welcome
 .welcome .welcome-content .slider-wrapper .owl-carousel .item .text {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.3s linear, opacity 0.3s linear;
+  transition:
+    visibility 0.3s linear,
+    opacity 0.3s linear;
 }
 .welcome .welcome-content .slider-wrapper .owl-carousel .item .text h5 {
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 0.53px;
   margin-bottom: 10px;
-  color: #1F2128;
+  color: #1f2128;
 }
 .welcome .welcome-content .slider-wrapper .owl-carousel .item .text p {
   font-weight: 400;
@@ -579,12 +654,12 @@ body {
 }
 
 ::selection {
-  background: #1F2128;
+  background: #1f2128;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #1F2128;
+  background: #1f2128;
   color: #fff;
 }
 
@@ -599,7 +674,7 @@ body {
 .left-heading .section-title {
   font-weight: 400;
   font-size: 28px;
-  color: #1F2128;
+  color: #1f2128;
   letter-spacing: 1.75px;
   line-height: 42px;
   margin-bottom: 30px;
@@ -611,7 +686,7 @@ body {
 .center-heading .section-title {
   font-weight: 400;
   font-size: 28px;
-  color: #1F2128;
+  color: #1f2128;
   letter-spacing: 1.75px;
   line-height: 38px;
   margin-bottom: 20px;
@@ -641,7 +716,7 @@ body {
   margin-bottom: 30px;
 }
 .left-text p.dark {
-  color: #1F2128;
+  color: #1f2128;
 }
 .left-text ul li {
   font-weight: 400;
@@ -681,7 +756,7 @@ body {
   height: 45px;
   position: relative;
   overflow: hidden;
-  border: 1px solid #1F2128;
+  border: 1px solid #1f2128;
 }
 .dark-btn .show-btn {
   position: absolute;
@@ -699,7 +774,7 @@ body {
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 1.35px;
-  color: #1F2128;
+  color: #1f2128;
 }
 .dark-btn .hide-btn {
   position: absolute;
@@ -718,7 +793,7 @@ body {
   font-size: 12px;
   letter-spacing: 1.35px;
   color: #fff;
-  background: #1F2128;
+  background: #1f2128;
 }
 .dark-btn:hover .show-btn {
   left: -195px;
@@ -769,7 +844,7 @@ body {
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 1.35px;
-  color: #1F2128;
+  color: #1f2128;
   background: #fff;
 }
 .light-btn:hover .show-btn {
@@ -817,7 +892,7 @@ blockquote .text:after {
   color: #e1ecf4;
 }
 blockquote .author {
-  color: #1F2128;
+  color: #1f2128;
   text-align: center;
 }
 
@@ -901,7 +976,8 @@ blockquote .author {
 }
 
 @media (max-width: 991px) {
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
   }
 
@@ -951,13 +1027,13 @@ parallax
 .half-parallax .parallax-items .parallax-item i {
   font-size: 30px;
   display: block;
-  color: #1F2128;
+  color: #1f2128;
   margin-bottom: 30px;
 }
 .half-parallax .parallax-items .parallax-item .feature-title {
   font-weight: 400;
   font-size: 16px;
-  color: #1F2128;
+  color: #1f2128;
   letter-spacing: 0.7px;
   margin-bottom: 15px;
 }
@@ -1106,7 +1182,7 @@ our team
   width: 5px;
   height: 85px;
   right: 0px;
-  background: #DDDDDD;
+  background: #dddddd;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -1118,7 +1194,7 @@ our team
   font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.69px;
-  color: #1F2128;
+  color: #1f2128;
   margin-bottom: 5px;
   margin-top: 3px;
 }
@@ -1139,17 +1215,17 @@ our team
 .person-item .content .text ul li a {
   display: inline-block;
   font-size: 14px;
-  color: #6F8BA4;
+  color: #6f8ba4;
   margin-right: 15px;
 }
 .person-item.active .content .text:before {
-  background: #1F2128;
+  background: #1f2128;
 }
 .person-item:hover .img {
   margin-top: -15px;
 }
 .person-item:hover .content .text:before {
-  background: #1F2128;
+  background: #1f2128;
 }
 
 /* 
@@ -1173,7 +1249,11 @@ blog
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.63) 100%);
+  background-image: linear-gradient(
+    -180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.63) 100%
+  );
   z-index: 1;
 }
 .blog-post-grid h3 {
@@ -1216,7 +1296,7 @@ blog
   width: 100%;
   height: 100%;
   opacity: 0.27;
-  background-image: linear-gradient(-130deg, #000000 0%, #4C4D51 100%);
+  background-image: linear-gradient(-130deg, #000000 0%, #4c4d51 100%);
   z-index: -1;
   left: 0px;
 }
@@ -1237,7 +1317,11 @@ blog
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.63) 100%);
+  background-image: linear-gradient(
+    -180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.63) 100%
+  );
   z-index: 1;
 }
 .blog-post-single .date {
@@ -1264,7 +1348,7 @@ blog
   width: 100%;
   height: 100%;
   opacity: 0.27;
-  background-image: linear-gradient(-130deg, #000000 0%, #4C4D51 100%);
+  background-image: linear-gradient(-130deg, #000000 0%, #4c4d51 100%);
   z-index: -1;
   left: 0px;
 }
@@ -1278,7 +1362,7 @@ blog
 .post-content h3 a {
   font-weight: 400;
   font-size: 16px;
-  color: #1F2128;
+  color: #1f2128;
   letter-spacing: 1px;
   line-height: 26px;
   -webkit-transition: all 0.3s ease 0s;
@@ -1287,7 +1371,7 @@ blog
   transition: all 0.3s ease 0s;
 }
 .post-content h3 a:hover {
-  color: #1F2128;
+  color: #1f2128;
 }
 .post-content .post-meta {
   overflow: hidden;
@@ -1298,11 +1382,11 @@ blog
   margin-right: 30px;
   height: 30px;
   line-height: 30px;
-  color: #1F2128;
+  color: #1f2128;
   font-size: 14px;
 }
 .post-content .post-meta li a {
-  color: #1F2128;
+  color: #1f2128;
 }
 .post-content .post-meta li span {
   display: inline-block;
@@ -1322,8 +1406,8 @@ blog
 }
 .post-content .post-footer {
   overflow: hidden;
-  border-bottom: 1px solid #D8D8D8;
-  border-top: 1px solid #D8D8D8;
+  border-bottom: 1px solid #d8d8d8;
+  border-top: 1px solid #d8d8d8;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -1346,7 +1430,7 @@ blog
   display: block;
   height: 30px;
   line-height: 30px;
-  color: #1F2128;
+  color: #1f2128;
 }
 .post-content .dark-btn {
   box-shadow: none;
@@ -1391,7 +1475,7 @@ blog
 }
 .section-comments ul li .comment-content .comment-by strong {
   display: block;
-  color: #1F2128;
+  color: #1f2128;
 }
 .section-comments ul li .comment-content .comment-by span {
   font-size: 12px;
@@ -1400,7 +1484,7 @@ blog
   position: absolute;
   right: 0px;
   top: 15px;
-  background: #F4F8FB;
+  background: #f4f8fb;
   color: #606060;
   height: 25px;
   line-height: 25px;
@@ -1418,7 +1502,7 @@ blog
   font-size: 12px;
 }
 .section-comments ul li .comment-content .comment-by .btn-reply:hover {
-  background: #1F2128;
+  background: #1f2128;
   color: #fff;
 }
 .section-comments ul li ul {
@@ -1442,7 +1526,8 @@ blog
   font-size: 14px;
   margin-bottom: 0px;
 }
-.post-comment .comment-form .form-item input, .post-comment .comment-form .form-item textarea {
+.post-comment .comment-form .form-item input,
+.post-comment .comment-form .form-item textarea {
   border: 1px solid #eee;
   width: 100%;
   height: 50px;
@@ -1457,7 +1542,8 @@ blog
   -moz-appearance: none;
   appearance: none;
 }
-.post-comment .comment-form .form-item input:focus, .post-comment .comment-form .form-item textarea:focus {
+.post-comment .comment-form .form-item input:focus,
+.post-comment .comment-form .form-item textarea:focus {
   border: 1px solid #ddd;
 }
 .post-comment .comment-form .form-item textarea {
@@ -1475,7 +1561,7 @@ footer
 --------------------------------------------- 
 */
 footer {
-  background: #1F2128;
+  background: #1f2128;
   padding-top: 70px;
 }
 footer img.logo {
@@ -1484,7 +1570,7 @@ footer img.logo {
 footer .text {
   font-weight: 400;
   font-size: 14px;
-  color: #D8D8D8;
+  color: #d8d8d8;
   line-height: 30px;
   letter-spacing: 0.88px;
 }
@@ -1529,7 +1615,7 @@ footer .footer-nav li a span {
   line-height: 32px;
   font-weight: 400;
   font-size: 14px;
-  color: #D8D8D8;
+  color: #d8d8d8;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -1546,7 +1632,7 @@ footer .address p {
   margin-bottom: 5px;
 }
 footer .address p a {
-  color: #D8D8D8;
+  color: #d8d8d8;
 }
 footer .copyright {
   text-align: center;
@@ -1556,7 +1642,7 @@ footer .copyright {
   padding-bottom: 30px;
   font-weight: 400;
   font-size: 14px;
-  color: #D8D8D8;
+  color: #d8d8d8;
   letter-spacing: 0.88px;
 }
 
@@ -1637,7 +1723,7 @@ pages
 .page .cover .cover-top .breadcrumb li {
   font-weight: 400;
   font-size: 14px;
-  color: #D8D8D8;
+  color: #d8d8d8;
   line-height: 30px;
   margin-left: 10px;
   display: inline-block;
@@ -1708,7 +1794,7 @@ pages
 .page .page-bottom .project-grid .project-grid-item .text h3 {
   font-weight: 400;
   font-size: 16px;
-  color: #1F2128;
+  color: #1f2128;
   letter-spacing: 0.7px;
   margin-bottom: 10px;
 }
@@ -1761,7 +1847,7 @@ pages
 .page .page-bottom .project-list .project-list-item .text h3 {
   font-weight: 400;
   font-size: 16px;
-  color: #1F2128;
+  color: #1f2128;
   letter-spacing: 0.7px;
   margin-bottom: 10px;
 }
@@ -1830,19 +1916,19 @@ pages
   padding-left: 7px;
   line-height: 80px;
   font-size: 20px;
-  color: #1F2128;
+  color: #1f2128;
 }
 .page .page-bottom .page-single .page-single-text .title {
   font-weight: 600;
   font-size: 16px;
-  color: #1F2128;
+  color: #1f2128;
   letter-spacing: 1px;
   margin-bottom: 20px;
 }
 .page .page-bottom .page-single .page-single-text .sub-title {
   font-weight: 400;
   font-size: 18px;
-  color: #1F2128;
+  color: #1f2128;
   letter-spacing: 1px;
   margin-bottom: 30px;
 }
@@ -1864,7 +1950,7 @@ pages
   display: inline-block;
   font-weight: 400;
   font-size: 16px;
-  color: #1F2128;
+  color: #1f2128;
   letter-spacing: 1px;
 }
 .page .page-bottom .page-single .page-single-text .info-list span {
@@ -1879,7 +1965,7 @@ pages
   font-weight: 400;
   font-size: 30px;
   letter-spacing: 1.29px;
-  color: #1F2128;
+  color: #1f2128;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -1894,30 +1980,49 @@ pages
 .page .page-bottom .page-single .page-single-text .skill-wrapper .skill-item {
   margin-bottom: 20px;
 }
-.page .page-bottom .page-single .page-single-text .skill-wrapper .skill-item strong {
+.page
+  .page-bottom
+  .page-single
+  .page-single-text
+  .skill-wrapper
+  .skill-item
+  strong {
   font-weight: 400;
   font-size: 14px;
-  color: #1F2128;
+  color: #1f2128;
   letter-spacing: 0.88px;
   display: block;
   margin-bottom: 5px;
 }
-.page .page-bottom .page-single .page-single-text .skill-wrapper .skill-item .skill-progress {
+.page
+  .page-bottom
+  .page-single
+  .page-single-text
+  .skill-wrapper
+  .skill-item
+  .skill-progress {
   width: 100%;
   position: relative;
   height: 10px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background: #E2E2E2;
+  background: #e2e2e2;
 }
-.page .page-bottom .page-single .page-single-text .skill-wrapper .skill-item .skill-progress .line {
+.page
+  .page-bottom
+  .page-single
+  .page-single-text
+  .skill-wrapper
+  .skill-item
+  .skill-progress
+  .line {
   position: absolute;
   height: 10px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background: #1F2128;
+  background: #1f2128;
   width: 0%;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -1957,7 +2062,7 @@ pages
 .project-grid .project-grid-item .text h3 {
   font-weight: 400;
   font-size: 16px;
-  color: #1F2128;
+  color: #1f2128;
   letter-spacing: 0.7px;
   margin-bottom: 10px;
 }
@@ -1986,14 +2091,15 @@ pages
   line-height: 24px;
   font-weight: 400;
   font-size: 14px;
-  color: #1F2128;
+  color: #1f2128;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-.pagination li a:hover, .pagination li a.active {
-  background: #1F2128;
+.pagination li a:hover,
+.pagination li a.active {
+  background: #1f2128;
   color: #fff;
 }
 
@@ -2016,12 +2122,12 @@ faq
 .faq-wrapper .faq-header {
   padding-bottom: 60px;
   margin-bottom: 60px;
-  border-bottom: 1px solid #E9E9E9;
+  border-bottom: 1px solid #e9e9e9;
 }
 .faq-wrapper .faq-header h2 {
   font-weight: 400;
   font-size: 30px;
-  color: #1F2128;
+  color: #1f2128;
   letter-spacing: 1.88px;
   margin-bottom: 20px;
 }
@@ -2080,7 +2186,7 @@ faq
   right: 5px;
   top: 10px;
   border: none;
-  background: #1F2128;
+  background: #1f2128;
   color: #fff;
   outline: none;
   cursor: pointer;
@@ -2089,7 +2195,7 @@ faq
 .accordion .accordion-item {
   border: none;
   background: none;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
   margin-bottom: 20px;
   border-radius: 0px;
@@ -2105,7 +2211,7 @@ faq
   border-radius: 0px;
 }
 .accordion .accordion-item .accordion-header:hover {
-  background: #1F2128;
+  background: #1f2128;
 }
 .accordion .accordion-item .accordion-header:hover .accordion-button {
   padding-left: 30px;
@@ -2117,7 +2223,7 @@ faq
   font-weight: 400;
   font-size: 15px;
   letter-spacing: 1px;
-  color: #1F2128;
+  color: #1f2128;
   text-decoration: none !important;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -2136,7 +2242,7 @@ faq
   height: 24px;
   line-height: 24px;
   color: #fff;
-  background: #1F2128;
+  background: #1f2128;
   text-align: center;
   font-size: 12px;
   margin-right: 20px;
@@ -2153,7 +2259,7 @@ faq
   letter-spacing: 1px;
 }
 .accordion .accordion-item .accordion-body .content {
-  border-top: 1px solid #E4EFF9;
+  border-top: 1px solid #e4eff9;
   padding-top: 30px;
 }
 .accordion .accordion-item .accordion-body p {
@@ -2191,7 +2297,7 @@ aside.default-aside .sidebar ul {
   margin-bottom: 30px;
 }
 aside.default-aside .sidebar ul li.active a {
-  background: #1F2128;
+  background: #1f2128;
   color: #fff;
 }
 aside.default-aside .sidebar ul li.active a:after {
@@ -2228,13 +2334,13 @@ aside.default-aside .sidebar ul li a:after {
   content: "\f105";
   position: absolute;
   left: 30px;
-  color: #1F2128;
+  color: #1f2128;
 }
 aside.default-aside .sidebar ul li a span {
   float: right;
   margin-right: 30px;
   display: inline-block;
-  background: #F6F4FD;
+  background: #f6f4fd;
   height: 20px;
   line-height: 20px;
   padding-left: 10px;
@@ -2261,7 +2367,7 @@ aside.default-aside .sidebar .box:before {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #1F2128;
+  background: #1f2128;
   z-index: 2;
   left: 0px;
   top: 0px;
@@ -2315,8 +2421,8 @@ contact
   left: 0px;
   right: 0px;
   margin: auto;
-  background: #F5F5F5;
-  color: #1F2128;
+  background: #f5f5f5;
+  color: #1f2128;
   margin-bottom: 20px;
 }
 .contact .contact-item .icon i {
@@ -2420,7 +2526,8 @@ contact
   font-size: 14px !important;
   letter-spacing: 0.7px;
 }
-.contact-bottom .contact-form input, .contact-bottom .contact-form textarea {
+.contact-bottom .contact-form input,
+.contact-bottom .contact-form textarea {
   border: 1px solid #eee;
   width: 100%;
   height: 50px;
@@ -2435,11 +2542,12 @@ contact
   -moz-appearance: none;
   appearance: none;
   margin-bottom: 30px;
-  color: #9BADBD;
+  color: #9badbd;
   font-size: 14px;
 }
-.contact-bottom .contact-form input:focus, .contact-bottom .contact-form textarea:focus {
-  border: 1px solid #1F2128;
+.contact-bottom .contact-form input:focus,
+.contact-bottom .contact-form textarea:focus {
+  border: 1px solid #1f2128;
   padding-left: 30px;
 }
 .contact-bottom .contact-form textarea {
@@ -2499,7 +2607,7 @@ preloader
   display: block;
   position: absolute;
   margin: auto;
-  background: #1F2128;
+  background: #1f2128;
   width: 50px;
   height: 50px;
   border-radius: 50%;

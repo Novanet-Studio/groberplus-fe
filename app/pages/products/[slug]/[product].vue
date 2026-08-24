@@ -1,49 +1,37 @@
 <script setup lang="ts">
 import MarkdownIt from "markdown-it";
-import {
-  getCategoryBySlugQuery,
-  getProductBySlugQuery,
-} from "~/schemas/grober-queries";
-import type { Category, Product } from "~/types/app";
+import { getCategoryBySlug, getProductBySlug } from "~/schemas/grober-queries";
 
 const route = useRoute();
-const graphql = useStrapiGraphQL();
 const markdown = new MarkdownIt();
 
 const { data: category } = await useAsyncData(
   `category-${route.params.slug}`,
   async () => {
     try {
-      const response = await graphql<any>(getCategoryBySlugQuery, {
-        slug: route.params.slug,
-      });
-
-      return (response?.data?.categories?.[0] as Category) || null;
+      return await getCategoryBySlug(route.params.slug as string);
     } catch (e) {
       console.error(e);
       return null;
     }
-  }
+  },
 );
 
 const { data: product } = await useAsyncData(
   `product-${route.params.product}`,
   async () => {
     try {
-      const response = await graphql<any>(getProductBySlugQuery, {
-        slug: route.params.product,
-      });
-      return (response?.data?.products?.[0] as Product) || null;
+      return await getProductBySlug(route.params.product as string);
     } catch (e) {
       console.error(e);
       return null;
     }
-  }
+  },
 );
 
 const coverImage = computed(() => {
   if (product.value?.images && product.value.images.length > 0) {
-    return product.value.images[0]!.url;
+    return product.value.images[0]!;
   }
   return "";
 });
@@ -53,9 +41,17 @@ function convertFirstRowToTh(html: string) {
   return html.replace(
     /<tr>(.*?)<\/tr>/,
     (match, p1) =>
-      `<tr>${p1.replace(/<td>/g, "<th>").replace(/<\/td>/g, "</th>")}</tr>`
+      `<tr>${p1.replace(/<td>/g, "<th>").replace(/<\/td>/g, "</th>")}</tr>`,
   );
 }
+
+onMounted(() => {
+  $(".page-gallery").magnificPopup({
+    type: "image",
+    gallery: { enabled: true },
+    zoom: { enabled: true, duration: 300, easing: "ease-in-out" },
+  });
+});
 </script>
 
 <template>
@@ -103,7 +99,7 @@ function convertFirstRowToTh(html: string) {
                   <div class="page-single-img">
                     <img
                       v-if="product.images && product.images.length > 0"
-                      :src="product.images[0]!.url"
+                      :src="product.images[0]!"
                       class="img-fluid float-left"
                       :alt="product.title"
                     />
@@ -134,16 +130,16 @@ function convertFirstRowToTh(html: string) {
                       <div
                         v-for="blueprint in product.blueprints"
                         class="col-lg-3 col-md-6 col-sm-6 col-6 blueprint-item"
-                        :key="blueprint.id"
+                        :key="blueprint"
                       >
                         <a
-                          :href="blueprint.url"
+                          :href="blueprint"
                           class="page-gallery"
                           target="_blank"
                         >
                           <img
-                            :src="blueprint.url"
-                            :alt="blueprint.name"
+                            :src="blueprint"
+                            :alt="product.title"
                             class="blueprint-image"
                           />
                         </a>
@@ -157,16 +153,12 @@ function convertFirstRowToTh(html: string) {
                 <div
                   v-for="galleryImg in product.images"
                   class="col-lg-3 col-md-6 col-sm-6 col-6"
-                  :key="galleryImg.id"
+                  :key="galleryImg"
                 >
-                  <a
-                    :href="galleryImg.url"
-                    class="page-gallery"
-                    target="_blank"
-                  >
+                  <a :href="galleryImg" class="page-gallery" target="_blank">
                     <img
-                      :src="galleryImg.url"
-                      :alt="galleryImg.name"
+                      :src="galleryImg"
+                      :alt="product.title"
                       class="gallery-image"
                     />
                   </a>

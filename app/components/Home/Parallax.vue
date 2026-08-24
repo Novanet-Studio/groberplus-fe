@@ -1,6 +1,13 @@
+<script setup lang="ts">
+import parallaxImage1 from "~/assets/images/photos/parallax/img.jpg";
+</script>
+
 <template>
   <section class="half-parallax">
-    <div class="parallax-image"></div>
+    <div
+      class="parallax-image"
+      :style="{ backgroundImage: `url(${parallaxImage1})` }"
+    ></div>
     <div class="parallax-items">
       <div class="container">
         <div class="row">

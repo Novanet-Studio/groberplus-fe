@@ -1,74 +1,37 @@
-export const getCategoriesQuery = `
-  query {
-    categories {
-      documentId
-      title
-      description
-      slug
-      image {
-        url
-        name
-      }
-    }
-  }
-`;
+import type { Category, Product } from "~/schemas/types/app";
 
-export const getCategoryWithProductsQuery = `
-  query getCategoryWithProducts($slug: String!) {
-    categories(filters: { slug: { eq: $slug } }) {
-      documentId
-      title
-      slug
-      image {
-        url
-        name
-      }
-      products {
-        documentId
-        title
-        slug
-        images {
-          url
-          name
-        }
-      }
-    }
-  }
-`;
+export async function getCategories(): Promise<Category[]> {
+  const { get } = useKairos();
+  return (await get<Category>("categories", { itemsPerPage: "100" })) ?? [];
+}
 
-export const getCategoryBySlugQuery = `
-  query getCategory($slug: String!) {
-    categories(filters: { slug: { eq: $slug } }) {
-      documentId
-      title
-      slug
-      image {
-        url
-      }
-    }
-  }
-`;
+export async function getCategoryBySlug(
+  slug: string,
+): Promise<Category | null> {
+  const { getOne } = useKairos();
+  return getOne<Category>("categories", slug);
+}
 
-export const getProductBySlugQuery = `
-  query getProduct($slug: String!) {
-    products(filters: { slug: { eq: $slug } }) {
-      documentId
-      title
-      description
-      hasSlowMotion
-      slug
-      images {
-        url
-        name
-      }
-      blueprints {
-        url
-        name
-      }
-      category {
-        title
-        slug
-      }
-    }
-  }
-`;
+export async function getCategoryWithProducts(
+  slug: string,
+): Promise<{ category: Category; products: Product[] } | null> {
+  const { getOne, get } = useKairos();
+  const category = await getOne<Category>("categories", slug);
+  if (!category) return null;
+
+  const allProducts = await get<Product>("products", {
+    itemsPerPage: "100",
+    populate: "category",
+  });
+
+  const products = (allProducts ?? []).filter(
+    (p) => p.relations?.category?.[0]?.data?.slug === slug,
+  );
+
+  return { category, products };
+}
+
+export async function getProductBySlug(slug: string): Promise<Product | null> {
+  const { getOne } = useKairos();
+  return getOne<Product>("products", slug, { populate: "category" });
+}

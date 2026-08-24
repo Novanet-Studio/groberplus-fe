@@ -30,7 +30,7 @@ export default function useOwlCarousel() {
         {
           opacity: 1,
         },
-        600
+        600,
       );
 
       function checkClasses() {

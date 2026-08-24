@@ -4,9 +4,9 @@ font & reset css
 --------------------------------------------- 
 */
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&subset=latin-ext');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&subset=latin-ext");
 
-$font : 'Montserrat', sans-serif;
+$font: "Montserrat", sans-serif;
 
 $light: 300;
 $normal: 400;
@@ -14,29 +14,28 @@ $medium: 500;
 $semi: 600;
 $bold: 700;
 
-
 // General Colors
-$primaryColor: #E92946;
-$secondaryColor: #F6F4FD;
+$primaryColor: #e92946;
+$secondaryColor: #f6f4fd;
 
 // Gradient Colors
-$gradientDark: #6A30D1;
-$gradientLight: #5C83E3;
+$gradientDark: #6a30d1;
+$gradientLight: #5c83e3;
 
 //Heading Color
-$headingDark: #1F2128;
+$headingDark: #1f2128;
 $headingLight: #ffffff;
 
 // Text Colors
 $textDark: #606060;
-$textLight: #D8D8D8;
+$textLight: #d8d8d8;
 
 // Colors
-$color2: #F68B39;
+$color2: #f68b39;
 $color3: #000;
 $color4: #58595b;
-$color5: #D1D3D4;
+$color5: #d1d3d4;
 
 body {
-	background: #f5f5f5;
+  background: #f5f5f5;
 }

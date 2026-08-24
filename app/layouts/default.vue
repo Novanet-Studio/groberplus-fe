@@ -33,11 +33,7 @@ function loadAction() {
 onMounted(() => {
   loadAction();
 
-  window.addEventListener("resize", handleResize);
-
-  return () => {
-    window.removeEventListener("resize", handleResize);
-  };
+  useEventListener(window, "resize", handleResize);
 });
 
 onMounted(() => {
